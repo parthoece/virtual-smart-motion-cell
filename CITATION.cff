@@ -8,8 +8,8 @@ license: Apache-2.0
 authors:
   - family-names: "Maintainer"
     given-names: "Project"
-repository-code: "https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell"
-url: "https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell"
+repository-code: "https://github.com/parthoece/virtual-smart-motion-cell"
+url: "https://github.com/parthoece/virtual-smart-motion-cell"
 abstract: "A vendor-neutral, cross-platform equipment-software and dynamic machine-fault research benchmark for virtual commissioning, diagnostics, synchronized CPS data, reproducible datasets, and visual experiment operation."
 keywords:
   - automation
