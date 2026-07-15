@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using VirtualSmartMotionCell.Application;
 using VirtualSmartMotionCell.Contracts;
+using VirtualSmartMotionCell.Control;
 using VirtualSmartMotionCell.Domain;
 using VirtualSmartMotionCell.Infrastructure;
 using VirtualSmartMotionCell.Runtime;
@@ -13,7 +14,7 @@ var tests = new List<(string Name, Func<Task> Test)>
     ("Outbox is durable and idempotent", OutboxRoundTrip),
     ("File MES delivery is idempotent", FileMesIdempotency),
     ("HTTP MES delivery sends idempotency key", HttpMesIdempotency),
-    ("Recipe draft approval activation lifecycle", RecipeLifecycle),
+    ("Recipe draft approval activation lifecycle", RecipeLifecycleSpec),
     ("Production repository materializes records", ProductionMaterialization),
     ("Alarm history persists lifecycle", AlarmHistory),
     ("Architecture project references follow boundaries", ArchitectureBoundaries),
@@ -82,7 +83,7 @@ static async Task HttpMesIdempotency()
         "The delivery envelope must include the event ID.");
 }
 
-static async Task RecipeLifecycle()
+static async Task RecipeLifecycleSpec()
 {
     using var temp = TempDirectory.Create();
     var initialPath = System.IO.Path.Combine(temp.Path, "standard-widget.v1.json");

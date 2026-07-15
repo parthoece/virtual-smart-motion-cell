@@ -1,10 +1,14 @@
+name: virtual-smart-motion-cell
+
 services:
   mes-simulator:
     build:
       context: .
       dockerfile: docker/Dockerfile.mes
     ports:
-      - "8090:8090"
+      - "127.0.0.1:${VSMC_MES_PORT:-8090}:8090"
+    restart: unless-stopped
+
   machine-runtime:
     build:
       context: .
@@ -12,14 +16,55 @@ services:
     depends_on:
       - mes-simulator
     ports:
-      - "8080:8080"
-      - "4840:4840"
+      - "127.0.0.1:${VSMC_RUNTIME_PORT:-8080}:8080"
+      - "127.0.0.1:${VSMC_OPCUA_PORT:-4840}:4840"
     environment:
       VSMC_DATA_DIR: /data
+      VSMC_ALLOW_REMOTE_COMMANDS: "true"
       VSMC_Mes__BaseUrl: http://mes-simulator:8090/
       VSMC_OpcUa__Endpoint: opc.tcp://0.0.0.0:4840/vsmc
     volumes:
       - vsmc-data:/data
+    restart: unless-stopped
+
+  research-studio:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.research
+    image: vsmc-research:0.5.1
+    ports:
+      - "127.0.0.1:${VSMC_STUDIO_PORT:-8091}:8091"
+    environment:
+      VSMC_RESEARCH_RUN_ROOT: /runs
+    volumes:
+      - ./runs:/runs
+    restart: unless-stopped
+
+  complete-bootstrap:
+    profiles: ["bootstrap"]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.research
+    image: vsmc-research:0.5.1
+    depends_on:
+      - mes-simulator
+      - machine-runtime
+      - research-studio
+    environment:
+      VSMC_API_URL: http://machine-runtime:8080
+      VSMC_BOOTSTRAP_TIMEOUT_S: "180"
+    volumes:
+      - ./runs:/runs
+    command:
+      - /bin/sh
+      - -lc
+      - |
+        set -eu
+        python /workspace/scripts/compose_bootstrap.py
+        bundle="$$(vsmc-bench run /workspace/benchmarks/manifests/machine-fault.yaml --output /runs | tail -n 1)"
+        python /workspace/scripts/validate_research_bundle.py "$$bundle"
+        basename "$$bundle" > /runs/LATEST_BUNDLE
+        printf 'Reference research bundle: %s\n' "$$bundle"
 
 volumes:
   vsmc-data:

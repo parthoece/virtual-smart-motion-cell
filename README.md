@@ -1,8 +1,8 @@
 # Virtual Smart Motion Cell
 
-[![CI](https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/actions/workflows/codeql.yml/badge.svg)](https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/actions/workflows/codeql.yml)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/badge)](https://securityscorecards.dev/viewer/?uri=github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell)
+[![CI](https://github.com/parthoece/virtual-smart-motion-cell/actions/workflows/ci.yml/badge.svg)](https://github.com/parthoece/virtual-smart-motion-cell/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/parthoece/virtual-smart-motion-cell/actions/workflows/codeql.yml/badge.svg)](https://github.com/parthoece/virtual-smart-motion-cell/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/parthoece/virtual-smart-motion-cell/badge)](https://securityscorecards.dev/viewer/?uri=github.com/parthoece/virtual-smart-motion-cell)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-536dfe)](docs/platform-support.md)
 

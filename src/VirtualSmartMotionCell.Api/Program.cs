@@ -123,26 +123,26 @@ app.MapGet("/metrics", (MachineStateStore store) =>
 {
     var state = store.Current;
     if (state is null) return Results.Text("# runtime not ready\n", "text/plain");
-    var text = $"""
+    var text = $$"""
 # HELP vsmc_machine_revision Current machine state revision.
 # TYPE vsmc_machine_revision gauge
-vsmc_machine_revision {state.Revision}
+vsmc_machine_revision {{state.Revision}}
 # HELP vsmc_runtime_deadline_misses_total Simulation loop deadline misses.
 # TYPE vsmc_runtime_deadline_misses_total counter
-vsmc_runtime_deadline_misses_total {state.Runtime.DeadlineMissCount}
+vsmc_runtime_deadline_misses_total {{state.Runtime.DeadlineMissCount}}
 # HELP vsmc_axis_following_error Axis following error.
 # TYPE vsmc_axis_following_error gauge
-vsmc_axis_following_error{{axis="X"}} {Invariant(state.XAxis.FollowingError)}
-vsmc_axis_following_error{{axis="Y"}} {Invariant(state.YAxis.FollowingError)}
+vsmc_axis_following_error{axis="X"} {{Invariant(state.XAxis.FollowingError)}}
+vsmc_axis_following_error{axis="Y"} {{Invariant(state.YAxis.FollowingError)}}
 # HELP vsmc_production_cycles_total Completed production cycles.
 # TYPE vsmc_production_cycles_total counter
-vsmc_production_cycles_total {state.Production.CycleCount}
+vsmc_production_cycles_total {{state.Production.CycleCount}}
 # HELP vsmc_oee Demonstration overall equipment effectiveness.
 # TYPE vsmc_oee gauge
-vsmc_oee {Invariant(state.Production.Oee)}
+vsmc_oee {{Invariant(state.Production.Oee)}}
 # HELP vsmc_outbox_pending Pending manufacturing messages.
 # TYPE vsmc_outbox_pending gauge
-vsmc_outbox_pending {state.Integration.OutboxPending}
+vsmc_outbox_pending {{state.Integration.OutboxPending}}
 """;
     return Results.Text(text, "text/plain; version=0.0.4");
 });

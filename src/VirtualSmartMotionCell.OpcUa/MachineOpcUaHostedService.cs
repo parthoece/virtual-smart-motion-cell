@@ -31,11 +31,14 @@ public sealed class MachineOpcUaHostedService(
             ApplicationConfiguration = configuration
         };
 
-        var certificateValid = await application.CheckApplicationInstanceCertificate(false, 2048).ConfigureAwait(false);
+        var certificateValid = await application.CheckApplicationInstanceCertificatesAsync(
+            silent: false,
+            lifeTimeInMonths: null,
+            ct: stoppingToken).ConfigureAwait(false);
         if (!certificateValid) throw new InvalidOperationException("The OPC UA application certificate could not be created or validated.");
 
         _server = new MachineOpcUaServer(stateStore);
-        await application.Start(_server).ConfigureAwait(false);
+        await application.StartAsync(_server).ConfigureAwait(false);
         logger.LogInformation("OPC UA simulation server listening at {Endpoint}", options.Value.Endpoint);
 
         try { await Task.Delay(Timeout.InfiniteTimeSpan, stoppingToken).ConfigureAwait(false); }
@@ -95,7 +98,10 @@ public sealed class MachineOpcUaHostedService(
             CertificateValidator = new CertificateValidator()
         };
         await configuration.Validate(ApplicationType.Server).ConfigureAwait(false);
-        await configuration.CertificateValidator.Update(configuration.SecurityConfiguration).ConfigureAwait(false);
+        await configuration.CertificateValidator.UpdateAsync(
+            configuration.SecurityConfiguration,
+            applicationUri: null,
+            ct: cancellationToken).ConfigureAwait(false);
         return configuration;
     }
 }
