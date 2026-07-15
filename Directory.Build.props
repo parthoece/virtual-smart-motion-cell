@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <Version>0.5.0</Version>
+    <AssemblyVersion>0.5.0.0</AssemblyVersion>
+    <FileVersion>0.5.0.0</FileVersion>
+    <RepositoryUrl>https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>Virtual Smart Motion Cell contributors</Authors>
+    <Company>Open source community</Company>
+    <Copyright>Copyright (c) Virtual Smart Motion Cell contributors</Copyright>
+  </PropertyGroup>
+</Project>

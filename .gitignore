@@ -1,0 +1,39 @@
+# .NET
+bin/
+obj/
+artifacts/
+TestResults/
+*.user
+*.suo
+*.userosscache
+
+# Python reference
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/
+
+# Frontend/editor
+node_modules/
+.vscode/*.log
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime data
+runtime-data/
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Local secrets
+.env
+*.pfx
+*.pem
+!.env.example
+
+runs/
+research/*.egg-info/
+*.parquet
+*.pcapng

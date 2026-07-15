@@ -1,0 +1,11 @@
+{
+  "name": "Virtual Smart Motion Cell",
+  "build": { "dockerfile": "Dockerfile" },
+  "forwardPorts": [8080],
+  "postCreateCommand": "dotnet restore VirtualSmartMotionCell.sln && python -m pip install -e 'reference/python-simulator[dev]'",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-dotnettools.csharp", "ms-python.python", "davidanson.vscode-markdownlint"]
+    }
+  }
+}

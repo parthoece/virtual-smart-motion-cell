@@ -1,0 +1,143 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  dotnet:
+    name: .NET (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-dotnet@v5
+        with: { dotnet-version: 10.0.301 }
+      - run: dotnet restore VirtualSmartMotionCell.sln
+      - run: dotnet build VirtualSmartMotionCell.sln --configuration Release --no-restore
+      - run: dotnet run --project tests/VirtualSmartMotionCell.Specs --configuration Release --no-build
+      - run: dotnet run --project tests/VirtualSmartMotionCell.IntegrationSpecs --configuration Release --no-build
+      - run: dotnet run --project examples/VirtualSmartMotionCell.SampleAdapter --configuration Release --no-build
+      - name: Reliability smoke campaign
+        if: runner.os == 'Linux'
+        run: dotnet run --project tools/VirtualSmartMotionCell.Reliability --configuration Release --no-build -- --cycles 25 --output artifacts/reliability/smoke.json
+      - name: Publish runtime and HMI smoke packages
+        shell: bash
+        run: |
+          dotnet publish src/VirtualSmartMotionCell.Api -c Release --no-build -o artifacts/runtime
+          dotnet publish src/VirtualSmartMotionCell.Hmi -c Release --no-build -o artifacts/hmi
+          dotnet publish tools/VirtualSmartMotionCell.MesSimulator -c Release --no-build -o artifacts/mes-simulator
+
+  viewer:
+    name: Three.js viewer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/viewer/package-lock.json
+      - run: npm ci --prefix web/viewer --no-audit --no-fund
+      - run: npm run check --prefix web/viewer
+      - run: npm run build --prefix web/viewer
+      - uses: actions/upload-artifact@v7
+        with:
+          name: viewer-preview
+          path: web/viewer/dist
+          if-no-files-found: error
+
+  end-to-end:
+    name: API + MES + OPC UA + WebSocket
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-dotnet@v5
+        with: { dotnet-version: 10.0.301 }
+      - run: dotnet build VirtualSmartMotionCell.sln -c Release
+      - name: Start simulated MES and machine runtime
+        shell: bash
+        env:
+          VSMC_MES_URLS: http://127.0.0.1:18090
+          VSMC_URLS: http://127.0.0.1:18080
+          VSMC_Mes__BaseUrl: http://127.0.0.1:18090/
+          VSMC_Mes__PollIntervalMilliseconds: "250"
+          VSMC_OpcUa__Endpoint: opc.tcp://127.0.0.1:14840/vsmc
+          VSMC_Runtime__DataDirectory: artifacts/smoke-runtime-data
+        run: |
+          mkdir -p artifacts
+          dotnet run --project tools/VirtualSmartMotionCell.MesSimulator -c Release --no-build > artifacts/mes.log 2>&1 & echo $! > artifacts/mes.pid
+          dotnet run --project src/VirtualSmartMotionCell.Api -c Release --no-build > artifacts/api.log 2>&1 & echo $! > artifacts/api.pid
+          trap 'kill $(cat artifacts/api.pid) $(cat artifacts/mes.pid) 2>/dev/null || true' EXIT
+          python scripts/api_smoke.py
+      - name: Upload smoke diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: end-to-end-logs
+          path: artifacts
+          if-no-files-found: warn
+
+  repository:
+    name: Repository contracts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.13" }
+      - run: python -m pip install pyyaml
+      - run: python scripts/check_repo.py
+      - run: python scripts/generate_sbom.py --output artifacts/source.spdx.json
+
+  python-reference:
+    name: Python numerical reference model
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.13" }
+      - run: python -m pip install -e "reference/python-simulator[dev]"
+      - run: pytest -q reference/python-simulator/tests
+
+  research-benchmark:
+    name: Dynamic research benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.13" }
+      - run: python -m pip install -e "research[dev]"
+      - run: pytest -q research/tests
+      - run: vsmc-bench validate benchmarks/manifests/machine-fault.yaml
+      - name: Generate short research evidence bundle
+        shell: bash
+        run: |
+          cp benchmarks/manifests/machine-fault.yaml /tmp/research-smoke.yaml
+          python - <<'PYSMOKE'
+          from pathlib import Path
+          import yaml
+          path = Path('/tmp/research-smoke.yaml')
+          data = yaml.safe_load(path.read_text())
+          data['episodes'] = 1
+          data['environment']['duration_s'] = 12
+          data['scenarios'][0]['activation_time_s'] = 3
+          data['scenarios'][0]['duration_s'] = 7
+          path.write_text(yaml.safe_dump(data, sort_keys=False))
+          PYSMOKE
+          BUNDLE=$(vsmc-bench run /tmp/research-smoke.yaml --output artifacts/research | tail -1)
+          python scripts/validate_research_bundle.py "$BUNDLE"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dynamic-research-smoke
+          path: artifacts/research
+          if-no-files-found: error

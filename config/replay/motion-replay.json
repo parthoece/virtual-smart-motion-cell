@@ -1,0 +1,176 @@
+[
+  {
+    "time": 0,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0,
+      "actualPosition": 0,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0,
+      "actualPosition": 0,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    }
+  },
+  {
+    "time": 0.5,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.3,
+      "actualPosition": 0.3,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.3,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.1,
+      "actualPosition": 0.1,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.1,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    }
+  },
+  {
+    "time": 1.0,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.8,
+      "actualPosition": 0.8,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.8,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.3,
+      "actualPosition": 0.3,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.3,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    }
+  },
+  {
+    "time": 2.0,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.2,
+      "actualPosition": 0.2,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.2,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.9,
+      "actualPosition": 0.9,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.9,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    }
+  },
+  {
+    "time": 3.0,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": -0.7,
+      "actualPosition": -0.7,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": -0.7,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.6,
+      "actualPosition": 0.6,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.6,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    }
+  },
+  {
+    "time": 4.0,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0,
+      "actualPosition": 0,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0,
+      "actualPosition": 0,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet publish tools/VirtualSmartMotionCell.MesSimulator -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+WORKDIR /app
+COPY --from=build /app/publish .
+ENV VSMC_MES_URLS=http://0.0.0.0:8090
+EXPOSE 8090
+ENTRYPOINT ["dotnet", "vsmc-mes-simulator.dll"]

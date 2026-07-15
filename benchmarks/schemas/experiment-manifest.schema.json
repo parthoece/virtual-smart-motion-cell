@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://virtual-smart-motion-cell.org/schemas/experiment-manifest-v1.json",
+  "title": "VSMC experiment manifest",
+  "type": "object",
+  "required": ["schema_version", "experiment_id", "environment", "capture"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "experiment_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$"},
+    "name": {"type": "string"},
+    "base_seed": {"type": "integer"},
+    "episodes": {"type": "integer", "minimum": 1},
+    "environment": {
+      "type": "object",
+      "required": ["id", "duration_s", "dt_ms"],
+      "properties": {
+        "id": {"const": "VSMC-DynamicGantry-v1"},
+        "duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "dt_ms": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "scenarios": {"type": "array"},
+    "capture": {"type": "object"}
+  }
+}

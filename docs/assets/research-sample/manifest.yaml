@@ -1,0 +1,65 @@
+schema_version: 1
+experiment_id: dynamic-gantry-machine-fault
+name: "Dynamic gantry \u2014 gradual machine fault"
+description: Primary benchmark with changing production load and a gradual X-axis
+  mechanical-friction fault.
+base_seed: 20260714
+episodes: 10
+execution:
+  mode: accelerated
+environment:
+  id: VSMC-DynamicGantry-v1
+  duration_s: 55
+  dt_ms: 20
+production:
+  mean_arrival_interval_s: 0.72
+  input_buffer_capacity: 14
+  maintenance_interval_s: 1000
+  products:
+  - id: P1
+    payload_kg: 0.8
+    inspect_s: 0.3
+    changeover_s: 0.7
+  - id: P2
+    payload_kg: 2.0
+    inspect_s: 0.55
+    changeover_s: 1.0
+  orders:
+  - id: ORDER-P2-RUSH
+    product_id: P2
+    quantity: 15
+    priority: 2
+  - id: ORDER-P1
+    product_id: P1
+    quantity: 25
+    priority: 1
+network:
+  base_delay_ms: 1.0
+  base_jitter_ms: 0.15
+  base_loss_probability: 0
+  base_duplicate_probability: 0
+  protocol: ethercat
+  cycle_period_ms: 20
+  logical_address: 4096
+  cia402_mode: cyclic_synchronous_position
+  slave_count: 2
+scenarios:
+- id: MF-MECH-FRICTION-X-001
+  domain: machine
+  category: mechanical
+  type: increased_friction
+  component: x_axis
+  activation_time_s: 14
+  duration_s: 32
+  progression: gradual
+  magnitude: 0.75
+  severity: major
+capture:
+  profile: research_full
+  formats:
+  - parquet
+  - csv
+  - pcapng
+  - jsonl
+datasets:
+  window_s: 1.0

@@ -1,0 +1,35 @@
+name: Reliability campaign
+on:
+  workflow_dispatch:
+    inputs:
+      cycles:
+        description: Minimum completed virtual cycles
+        required: false
+        default: "10000"
+      duration_minutes:
+        description: Optional real-time soak duration in minutes (0 disables pacing)
+        required: false
+        default: "0"
+  schedule:
+    - cron: "31 2 * * 0"
+permissions:
+  contents: read
+jobs:
+  deterministic-endurance:
+    runs-on: ubuntu-latest
+    env:
+      CAMPAIGN_CYCLES: ${{ inputs.cycles || '10000' }}
+      CAMPAIGN_DURATION_MINUTES: ${{ inputs.duration_minutes || '0' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.301
+      - run: dotnet run --project tools/VirtualSmartMotionCell.Reliability -c Release -- --cycles "$CAMPAIGN_CYCLES" --duration-minutes "$CAMPAIGN_DURATION_MINUTES" --output artifacts/reliability/report.json
+      - uses: actions/upload-artifact@v7
+        with:
+          name: reliability-${{ github.run_id }}
+          path: artifacts/reliability/report.json
+          if-no-files-found: error

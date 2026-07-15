@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../VirtualSmartMotionCell.Application/VirtualSmartMotionCell.Application.csproj" />
+    <ProjectReference Include="../VirtualSmartMotionCell.Infrastructure/VirtualSmartMotionCell.Infrastructure.csproj" />
+    <ProjectReference Include="../VirtualSmartMotionCell.Control/VirtualSmartMotionCell.Control.csproj" />
+    <ProjectReference Include="../VirtualSmartMotionCell.AdapterSdk/VirtualSmartMotionCell.AdapterSdk.csproj" />
+  </ItemGroup>
+  <ItemGroup><FrameworkReference Include="Microsoft.AspNetCore.App" /></ItemGroup>
+</Project>

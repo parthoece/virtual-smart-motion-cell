@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/VirtualSmartMotionCell.Application/VirtualSmartMotionCell.Application.csproj" />
+    <ProjectReference Include="../../src/VirtualSmartMotionCell.Control/VirtualSmartMotionCell.Control.csproj" />
+  </ItemGroup>
+</Project>

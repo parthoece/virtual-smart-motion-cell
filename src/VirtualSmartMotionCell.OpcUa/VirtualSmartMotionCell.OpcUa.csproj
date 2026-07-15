@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../VirtualSmartMotionCell.Application/VirtualSmartMotionCell.Application.csproj" />
+    <ProjectReference Include="../VirtualSmartMotionCell.Runtime/VirtualSmartMotionCell.Runtime.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Server" />
+  </ItemGroup>
+</Project>

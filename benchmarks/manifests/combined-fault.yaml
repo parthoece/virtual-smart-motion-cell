@@ -1,0 +1,71 @@
+schema_version: 1
+experiment_id: dynamic-gantry-combined-fault
+name: "Dynamic gantry \u2014 machine and network faults"
+description: Multi-label benchmark with mechanical degradation and delayed network
+  telemetry.
+base_seed: 20260714
+episodes: 10
+execution:
+  mode: accelerated
+environment:
+  id: VSMC-DynamicGantry-v1
+  duration_s: 60
+  dt_ms: 20
+production:
+  mean_arrival_interval_s: 0.7
+  input_buffer_capacity: 14
+  maintenance_interval_s: 1000
+  products:
+  - id: P1
+    payload_kg: 0.9
+    inspect_s: 0.34
+  - id: P2
+    payload_kg: 2.1
+    inspect_s: 0.55
+  orders:
+  - id: ORDER-P2
+    product_id: P2
+    quantity: 20
+    priority: 2
+  - id: ORDER-P1
+    product_id: P1
+    quantity: 20
+    priority: 1
+network:
+  base_delay_ms: 1.0
+  base_jitter_ms: 0.2
+  protocol: ethercat
+  cycle_period_ms: 20
+  logical_address: 4096
+  cia402_mode: cyclic_synchronous_position
+  slave_count: 2
+scenarios:
+- id: MF-SENSOR-DRIFT-X-001
+  domain: machine
+  category: sensor_feedback
+  type: encoder_drift
+  component: x_axis_encoder
+  activation_time_s: 12
+  duration_s: 38
+  progression: gradual
+  magnitude: 0.14
+  severity: major
+- id: NF-LOSS-001
+  domain: network
+  category: availability
+  type: packet_loss
+  component: state_channel
+  activation_time_s: 24
+  duration_s: 18
+  progression: abrupt
+  magnitude: 0.22
+  severity: minor
+capture:
+  profile: research_full
+  formats:
+  - parquet
+  - csv
+  - pcapng
+  - jsonl
+datasets:
+  window_s: 1.0

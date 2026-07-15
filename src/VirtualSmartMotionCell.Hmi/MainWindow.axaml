@@ -1,0 +1,237 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="VirtualSmartMotionCell.Hmi.MainWindow"
+        Width="1440" Height="900" MinWidth="1080" MinHeight="700"
+        Title="Virtual Smart Motion Cell — Operator HMI">
+  <Grid RowDefinitions="Auto,*,Auto" Background="#0b1118">
+    <Border Grid.Row="0" Background="#121b26" Padding="20,13">
+      <Grid ColumnDefinitions="*,Auto,Auto">
+        <StackPanel>
+          <TextBlock Text="VIRTUAL SMART MOTION CELL" FontSize="21" FontWeight="Bold" />
+          <TextBlock Text="Cross-platform equipment software reference architecture" Foreground="#8ca4be" />
+        </StackPanel>
+        <Border Grid.Column="1" CornerRadius="12" Background="#193329" Padding="12,6" Margin="8,0">
+          <TextBlock Text="{Binding Connection}" Foreground="#75d6a5" FontWeight="Bold" />
+        </Border>
+        <TextBlock Grid.Column="2" Text="{Binding Endpoint}" VerticalAlignment="Center" Foreground="#8ca4be" />
+      </Grid>
+    </Border>
+
+    <TabControl Grid.Row="1" Margin="12">
+      <TabItem Header="Overview">
+        <Grid ColumnDefinitions="330,*,360" Margin="8">
+          <StackPanel Grid.Column="0">
+            <Border Classes="card"><StackPanel>
+              <TextBlock Text="Machine status" FontSize="17" FontWeight="Bold" />
+              <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" Margin="0,10,0,0">
+                <TextBlock Text="Mode"/><TextBlock Grid.Column="1" Text="{Binding Mode}" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1" Text="Execution"/><TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ExecutionState}" FontWeight="Bold"/>
+                <TextBlock Grid.Row="2" Text="Step"/><TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ProductionStep}" FontWeight="Bold"/>
+                <TextBlock Grid.Row="3" Text="Revision"/><TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Revision}"/>
+                <TextBlock Grid.Row="4" Text="Simulation"/><TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding SimulationTime}"/>
+              </Grid>
+            </StackPanel></Border>
+            <Border Classes="card"><StackPanel>
+              <TextBlock Text="Mode" FontWeight="Bold" />
+              <WrapPanel Margin="0,8,0,0">
+                <Button Classes="command" Content="Offline" Command="{Binding OfflineModeCommand}" />
+                <Button Classes="command" Content="Manual" Command="{Binding ManualModeCommand}" />
+                <Button Classes="command" Content="Automatic" Command="{Binding AutomaticModeCommand}" />
+                <Button Classes="command" Content="Maintenance" Command="{Binding MaintenanceModeCommand}" />
+              </WrapPanel>
+            </StackPanel></Border>
+            <Border Classes="card"><StackPanel>
+              <TextBlock Text="Machine commands" FontWeight="Bold" />
+              <WrapPanel Margin="0,8,0,0">
+                <Button Classes="command" Content="Initialize" Command="{Binding InitializeCommand}" />
+                <Button Classes="command" Content="Home" Command="{Binding HomeCommand}" />
+                <Button Classes="command accent" Content="Start" Command="{Binding StartCommand}" />
+                <Button Classes="command" Content="Pause" Command="{Binding PauseCommand}" />
+                <Button Classes="command" Content="Resume" Command="{Binding ResumeCommand}" />
+                <Button Classes="command" Content="Stop" Command="{Binding StopCommand}" />
+                <Button Classes="command danger" Content="Abort" Command="{Binding AbortCommand}" />
+                <Button Classes="command" Content="Reset" Command="{Binding ResetCommand}" />
+              </WrapPanel>
+            </StackPanel></Border>
+          </StackPanel>
+
+          <Grid Grid.Column="1" RowDefinitions="*,Auto,Auto">
+            <Border Classes="card">
+              <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="LIVE 3D DIGITAL TWIN" FontSize="23" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBlock Text="Open the browser viewer from the runtime endpoint" Foreground="#8ca4be" Margin="0,8" />
+                <TextBlock Text="{Binding ViewerUrl}" FontSize="18" Foreground="#55b9f3" />
+                <TextBlock Text="The viewer is an independent client; closing it does not stop the runtime." Foreground="#8ca4be" Margin="0,16,0,0" />
+              </StackPanel>
+            </Border>
+            <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*">
+              <Border Classes="metric"><StackPanel><TextBlock Text="X actual" Foreground="#8ca4be"/><TextBlock Text="{Binding XPosition}" FontSize="26" FontWeight="Bold"/></StackPanel></Border>
+              <Border Grid.Column="1" Classes="metric"><StackPanel><TextBlock Text="Y actual" Foreground="#8ca4be"/><TextBlock Text="{Binding YPosition}" FontSize="26" FontWeight="Bold"/></StackPanel></Border>
+              <Border Grid.Column="2" Classes="metric"><StackPanel><TextBlock Text="Order progress" Foreground="#8ca4be"/><TextBlock Text="{Binding OrderProgress}" FontSize="26" FontWeight="Bold"/></StackPanel></Border>
+              <Border Grid.Column="3" Classes="metric"><StackPanel><TextBlock Text="OEE" Foreground="#8ca4be"/><TextBlock Text="{Binding Oee}" FontSize="26" FontWeight="Bold"/></StackPanel></Border>
+            </Grid>
+            <Border Grid.Row="2" Classes="card"><TextBlock Text="{Binding LastCommand}" TextWrapping="Wrap" /></Border>
+          </Grid>
+
+          <StackPanel Grid.Column="2">
+            <Border Classes="card"><StackPanel>
+              <TextBlock Text="Production" FontWeight="Bold" />
+              <TextBlock Text="{Binding OrderId}" FontSize="17" Margin="0,8,0,0" />
+              <TextBlock Text="{Binding OrderStatus}" Foreground="#8ca4be" />
+              <TextBlock Text="{Binding OrderProgress}" FontSize="22" FontWeight="Bold" Margin="0,6" />
+              <WrapPanel><Button Classes="command" Content="Load demo order" Command="{Binding LoadDemoOrderCommand}"/><Button Classes="command" Content="Cancel" Command="{Binding CancelOrderCommand}"/></WrapPanel>
+            </StackPanel></Border>
+            <Border Classes="card"><StackPanel>
+              <TextBlock Text="Interlocks" FontWeight="Bold"/>
+              <TextBlock Text="{Binding Interlocks}" TextWrapping="Wrap" Margin="0,8,0,0"/>
+              <TextBlock Text="{Binding InterlockDetail}" Foreground="#8ca4be" TextWrapping="Wrap" Margin="0,4,0,0"/>
+            </StackPanel></Border>
+            <Border Classes="card"><StackPanel>
+              <TextBlock Text="Active alarms" FontWeight="Bold"/>
+              <ScrollViewer MaxHeight="190"><TextBlock Text="{Binding Alarms}" TextWrapping="Wrap" Margin="0,8"/></ScrollViewer>
+              <WrapPanel><Button Classes="command" Content="Acknowledge" Command="{Binding AcknowledgeCommand}"/><Button Classes="command" Content="Reset" Command="{Binding ResetCommand}"/></WrapPanel>
+            </StackPanel></Border>
+          </StackPanel>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Automatic">
+        <Grid ColumnDefinitions="*,*" Margin="12">
+          <Border Classes="card"><StackPanel>
+            <TextBlock Text="Production order" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="{Binding OrderId}" FontSize="24" Margin="0,16,0,0"/>
+            <TextBlock Text="{Binding OrderStatus}" Foreground="#8ca4be"/>
+            <TextBlock Text="{Binding OrderProgress}" FontSize="38" FontWeight="Bold" Margin="0,20"/>
+            <WrapPanel><Button Classes="command" Content="Load demo order" Command="{Binding LoadDemoOrderCommand}"/><Button Classes="command" Content="Cancel order" Command="{Binding CancelOrderCommand}"/></WrapPanel>
+            <Separator Margin="0,20"/>
+            <TextBlock Text="Automatic sequence" FontWeight="Bold"/>
+            <TextBlock Text="{Binding ProductionStep}" FontSize="28" Margin="0,10"/>
+            <TextBlock Text="Part" Foreground="#8ca4be"/><TextBlock Text="{Binding ActivePart}" FontSize="20"/>
+          </StackPanel></Border>
+          <Border Grid.Column="1" Classes="card"><StackPanel>
+            <TextBlock Text="Production KPIs" FontSize="19" FontWeight="Bold"/>
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="0,16">
+              <TextBlock Text="Cycles"/><TextBlock Grid.Column="1" Text="{Binding Cycles}" FontSize="22" FontWeight="Bold"/>
+              <TextBlock Grid.Row="1" Text="Good"/><TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding GoodCount}" FontSize="22"/>
+              <TextBlock Grid.Row="2" Text="Reject"/><TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding RejectCount}" FontSize="22"/>
+              <TextBlock Grid.Row="3" Text="Last cycle"/><TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding LastCycle}" FontSize="22"/>
+            </Grid>
+            <TextBlock Text="{Binding Oee}" FontSize="44" FontWeight="Bold"/>
+            <TextBlock Text="{Binding OeeComponents}" Foreground="#8ca4be"/>
+            <WrapPanel Margin="0,24,0,0"><Button Classes="command accent" Content="Start" Command="{Binding StartCommand}"/><Button Classes="command" Content="Pause" Command="{Binding PauseCommand}"/><Button Classes="command" Content="Resume" Command="{Binding ResumeCommand}"/><Button Classes="command" Content="Stop" Command="{Binding StopCommand}"/><Button Classes="command danger" Content="Abort" Command="{Binding AbortCommand}"/></WrapPanel>
+          </StackPanel></Border>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Manual">
+        <Grid ColumnDefinitions="*,*" Margin="12">
+          <Border Classes="card"><StackPanel>
+            <TextBlock Text="X axis" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Text="{Binding XPosition}" FontSize="44" FontWeight="Bold"/>
+            <TextBlock Text="{Binding XSummary}" Foreground="#8ca4be"/>
+            <TextBlock Text="{Binding XState}" Margin="0,8"/>
+            <WrapPanel><Button Classes="jog" Content="JOG −" Command="{Binding JogXNegativeCommand}"/><Button Classes="jog" Content="JOG +" Command="{Binding JogXPositiveCommand}"/></WrapPanel>
+          </StackPanel></Border>
+          <Border Grid.Column="1" Classes="card"><StackPanel>
+            <TextBlock Text="Y axis" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Text="{Binding YPosition}" FontSize="44" FontWeight="Bold"/>
+            <TextBlock Text="{Binding YSummary}" Foreground="#8ca4be"/>
+            <TextBlock Text="{Binding YState}" Margin="0,8"/>
+            <WrapPanel><Button Classes="jog" Content="JOG −" Command="{Binding JogYNegativeCommand}"/><Button Classes="jog" Content="JOG +" Command="{Binding JogYPositiveCommand}"/></WrapPanel>
+          </StackPanel></Border>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Maintenance">
+        <Grid ColumnDefinitions="*,*" Margin="12">
+          <Border Classes="card"><StackPanel>
+            <TextBlock Text="Maintenance controls" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="Maintenance mode permits controlled diagnostic jogging while automatic execution remains blocked." TextWrapping="Wrap" Foreground="#8ca4be" Margin="0,8,0,16"/>
+            <WrapPanel><Button Classes="command" Content="Enter maintenance" Command="{Binding MaintenanceModeCommand}"/><Button Classes="command" Content="Home" Command="{Binding HomeCommand}"/><Button Classes="command" Content="Reset" Command="{Binding ResetCommand}"/></WrapPanel>
+            <TextBlock Text="Fault injection" FontWeight="Bold" Margin="0,24,0,8"/>
+            <WrapPanel>
+              <Button Classes="command danger" Content="E-stop" Command="{Binding EmergencyStopCommand}"/>
+              <Button Classes="command danger" Content="Guard open" Command="{Binding GuardOpenCommand}"/>
+              <Button Classes="command danger" Content="Bus loss" Command="{Binding BusLossCommand}"/>
+              <Button Classes="command danger" Content="Drive X" Command="{Binding DriveFaultXCommand}"/>
+              <Button Classes="command danger" Content="Drive Y" Command="{Binding DriveFaultYCommand}"/>
+              <Button Classes="command danger" Content="Freeze X" Command="{Binding FrozenAxisXCommand}"/>
+              <Button Classes="command danger" Content="Following error" Command="{Binding FollowingErrorCommand}"/>
+              <Button Classes="command" Content="Clear all" Command="{Binding ClearFaultsCommand}"/>
+            </WrapPanel>
+          </StackPanel></Border>
+          <Border Grid.Column="1" Classes="card"><StackPanel>
+            <TextBlock Text="Maintenance evidence" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="Last transition" Foreground="#8ca4be" Margin="0,12,0,0"/><TextBlock Text="{Binding LastTransition}" TextWrapping="Wrap"/>
+            <TextBlock Text="Correlation ID" Foreground="#8ca4be" Margin="0,12,0,0"/><TextBlock Text="{Binding CorrelationId}" TextWrapping="Wrap"/>
+            <TextBlock Text="Interlocks" Foreground="#8ca4be" Margin="0,12,0,0"/><TextBlock Text="{Binding InterlockDetail}" TextWrapping="Wrap"/>
+          </StackPanel></Border>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Alarms &amp; Recovery">
+        <Grid ColumnDefinitions="*,*" Margin="12">
+          <Border Classes="card"><StackPanel>
+            <TextBlock Text="Alarm lifecycle" FontSize="19" FontWeight="Bold"/>
+            <ScrollViewer><TextBlock Text="{Binding Alarms}" TextWrapping="Wrap" Margin="0,14"/></ScrollViewer>
+            <WrapPanel><Button Classes="command" Content="Acknowledge" Command="{Binding AcknowledgeCommand}"/><Button Classes="command" Content="Clear causes" Command="{Binding ClearFaultsCommand}"/><Button Classes="command" Content="Reset" Command="{Binding ResetCommand}"/></WrapPanel>
+          </StackPanel></Border>
+          <Border Grid.Column="1" Classes="card"><StackPanel>
+            <TextBlock Text="Restart recovery" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Recovery}" TextWrapping="Wrap" Margin="0,14"/>
+            <WrapPanel>
+              <Button Classes="command" Content="Discard &amp; reset" Command="{Binding RecoverDiscardCommand}"/>
+              <Button Classes="command" Content="Rehome &amp; reset" Command="{Binding RecoverRehomeCommand}"/>
+              <Button Classes="command" Content="Resume simulation" Command="{Binding RecoverResumeCommand}"/>
+            </WrapPanel>
+            <TextBlock Text="Simulation resume exists only to exercise recovery architecture. A physical machine would require a site-specific risk assessment and verified state reconciliation." TextWrapping="Wrap" Foreground="#f2bd5b" Margin="0,20,0,0"/>
+          </StackPanel></Border>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Recipes &amp; Integration">
+        <Grid ColumnDefinitions="*,*" Margin="12">
+          <Border Classes="card"><StackPanel>
+            <TextBlock Text="Active recipe" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Recipe}" FontSize="30" FontWeight="Bold" Margin="0,14,0,0"/>
+            <TextBlock Text="{Binding RecipeLifecycle}" Foreground="#8ca4be"/>
+            <TextBlock Text="Checksum" Foreground="#8ca4be" Margin="0,14,0,0"/><TextBlock Text="{Binding RecipeChecksum}"/>
+            <Button Classes="command" Content="Activate standard recipe" Command="{Binding ActivateDefaultRecipeCommand}" HorizontalAlignment="Left" Margin="0,18,0,0"/>
+          </StackPanel></Border>
+          <Border Grid.Column="1" Classes="card"><StackPanel>
+            <TextBlock Text="Factory integration" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="MES" Foreground="#8ca4be" Margin="0,14,0,0"/><TextBlock Text="{Binding MesHealth}" TextWrapping="Wrap"/>
+            <TextBlock Text="Transactional outbox" Foreground="#8ca4be" Margin="0,14,0,0"/><TextBlock Text="{Binding Outbox}"/>
+            <TextBlock Text="OPC UA" Foreground="#8ca4be" Margin="0,14,0,0"/><TextBlock Text="{Binding OpcUa}" TextWrapping="Wrap"/>
+          </StackPanel></Border>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Diagnostics">
+        <Grid ColumnDefinitions="*,*" Margin="12">
+          <Border Classes="card"><StackPanel>
+            <TextBlock Text="Runtime diagnostics" FontSize="19" FontWeight="Bold"/>
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" Margin="0,16">
+              <TextBlock Text="Loop / target"/><TextBlock Grid.Column="1" Text="{Binding LoopTiming}"/>
+              <TextBlock Grid.Row="1" Text="Maximum loop"/><TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MaxLoop}"/>
+              <TextBlock Grid.Row="2" Text="Deadline misses"/><TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding DeadlineMisses}"/>
+              <TextBlock Grid.Row="3" Text="Command queue"/><TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding QueueDepth}"/>
+              <TextBlock Grid.Row="4" Text="Connected clients"/><TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Clients}"/>
+            </Grid>
+            <TextBlock Text="Uptime" Foreground="#8ca4be"/><TextBlock Text="{Binding Uptime}" FontSize="28"/>
+          </StackPanel></Border>
+          <Border Grid.Column="1" Classes="card"><StackPanel>
+            <TextBlock Text="Axis diagnostics" FontSize="19" FontWeight="Bold"/>
+            <TextBlock Text="X" FontWeight="Bold" Margin="0,14,0,0"/><TextBlock Text="{Binding XSummary}" TextWrapping="Wrap"/>
+            <TextBlock Text="Y" FontWeight="Bold" Margin="0,14,0,0"/><TextBlock Text="{Binding YSummary}" TextWrapping="Wrap"/>
+            <TextBlock Text="Last transition" Foreground="#8ca4be" Margin="0,20,0,0"/><TextBlock Text="{Binding LastTransition}" TextWrapping="Wrap"/>
+          </StackPanel></Border>
+        </Grid>
+      </TabItem>
+    </TabControl>
+
+    <Border Grid.Row="2" Background="#121b26" Padding="12">
+      <TextBlock Text="Simulation and virtual commissioning only — not a safety controller and not for controlling physical equipment." Foreground="#f2bd5b" HorizontalAlignment="Center"/>
+    </Border>
+  </Grid>
+</Window>

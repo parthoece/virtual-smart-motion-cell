@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Live Three.js digital twin for the Virtual Smart Motion Cell.">
+  <title>Virtual Smart Motion Cell — Three.js Digital Twin</title>
+  <script type="module" crossorigin src="/assets/index-BpuCcfds.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CqeYrUw5.css">
+</head>
+<body>
+  <main>
+    <div id="scene" aria-label="Live Three.js visualization of the virtual motion cell"></div>
+    <header class="topbar">
+      <div><strong>VIRTUAL SMART MOTION CELL</strong><span>Three.js digital twin · live or recorded replay</span></div>
+      <div class="toolbar">
+        <button id="toggle-target" type="button">Target ghost</button>
+        <button id="reset-camera" type="button">Reset camera</button>
+        <div id="connection" class="badge warning">CONNECTING</div>
+      </div>
+    </header>
+
+    <section class="status-panel panel" aria-live="polite">
+      <div class="metric"><span>Mode</span><strong id="mode">--</strong></div>
+      <div class="metric"><span>Execution</span><strong id="execution">--</strong></div>
+      <div class="metric"><span>Step</span><strong id="step">--</strong></div>
+      <div class="metric"><span>Order</span><strong id="order">--</strong></div>
+      <div class="metric"><span>Part</span><strong id="part">--</strong></div>
+      <div class="metric"><span>Progress</span><strong id="progress">0 / 0</strong></div>
+      <div class="metric"><span>OEE</span><strong id="oee">--</strong></div>
+    </section>
+
+    <section class="axis-panel panel">
+      <h2>Axis diagnostics</h2>
+      <div class="axis-row"><b>X</b><span>Actual</span><strong id="x-actual">--</strong><span>Target</span><strong id="x-target">--</strong><span>Error</span><strong id="x-error">--</strong></div>
+      <div class="axis-row"><b>Y</b><span>Actual</span><strong id="y-actual">--</strong><span>Target</span><strong id="y-target">--</strong><span>Error</span><strong id="y-error">--</strong></div>
+      <div id="interlocks" class="ok">Waiting for machine state</div>
+      <div id="integration" class="integration">MES -- · OPC UA --</div>
+    </section>
+
+    <section class="alarm-panel panel">
+      <h2>Active alarms</h2>
+      <div id="alarms">No active alarms</div>
+    </section>
+
+    <aside class="legend panel">
+      <span><i class="actual"></i> Actual carriage</span>
+      <span><i class="target"></i> Commanded target</span>
+      <span><i class="part"></i> Workpiece</span>
+    </aside>
+
+    <footer>Drag to orbit · wheel to zoom · viewer never owns machine control</footer>
+  </main>
+</body>
+</html>

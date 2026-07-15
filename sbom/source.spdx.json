@@ -1,0 +1,2975 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "virtual-smart-motion-cell-source",
+  "documentNamespace": "https://example.org/spdx/virtual-smart-motion-cell/3f3394f992ab160324f74c047e72f19f8f4db6d56da3c5377968725c208cbb5c",
+  "creationInfo": {
+    "created": "2026-07-14T00:00:00Z",
+    "creators": [
+      "Tool: scripts/generate_sbom.py"
+    ]
+  },
+  "files": [
+    {
+      "SPDXID": "SPDXRef-File-6e656a06857650151f28f253233ed97584044098",
+      "fileName": "./.devcontainer/Dockerfile",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "04063f779b826061b33676ff8b4bf840b04ca3424a6aa015f08724f91ec58989"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b34062a34eb177d6796c9ce334de4930d86f38c1",
+      "fileName": "./.devcontainer/devcontainer.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3bf15a4ad84643cf050125c1bc65fc0115e804679ce2516e0baaced3f4f0781b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-05a721ebe3ba0754116825ed1359ff1785f4bbac",
+      "fileName": "./.dockerignore",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4909cf8b1aa6e05d32d6368b1c9937367e7825b8938c2b17a69cbed3f29e69c5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-626a747c8694eaae66f2afb3d1a745b045782c70",
+      "fileName": "./.editorconfig",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1ceccee575d870974cf29841b770961c076e785157d452ff6d3671cb14aab6ca"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d4dae00d11854b35292c2b8a30515a9a0aa2d871",
+      "fileName": "./.env.example",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b63e4d6104a2e8dd609b3425fb7c0f5f6db28f4403f49ea41799fd510f0ddcb9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-24139dae656713ba861751fb2c2ac38839349a7a",
+      "fileName": "./.gitattributes",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4e7fe98afe8e3efc79aed1e46dabe2d22000676d71b63faafa3c5c0e0bfa9274"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2ffb73f922e0fe6c6c413b71c5016976ad78fb6f",
+      "fileName": "./.github/ISSUE_TEMPLATE/adapter_proposal.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d826c93f71302a708e2f62e7d6ece33cf24e60c07bf53dba6a4d9fc4d58a8e32"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8ea4c4999f18658d7fdb5ad379dd7363b3d52508",
+      "fileName": "./.github/ISSUE_TEMPLATE/architecture_proposal.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e6725fac411c21aabe3becc85e7dbff20e8ba484d1711d65eeef25ce537541dc"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3e235c5513b51d7b9d7ce0c13ec99dfe646a2af8",
+      "fileName": "./.github/ISSUE_TEMPLATE/bug_report.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e0de1ecf2dd2974197ddd9890315fc51a7b85404be16b87236d7454fcb0570bb"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3fcac755ee1270a77a9c5042beab12617b51f2be",
+      "fileName": "./.github/ISSUE_TEMPLATE/config.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "55f9aa1e12080c74bfa4d93a784526cac90fe5a3ca2f035c39d7ffc580da7ad1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-dc11e028cae53c1d2e79def7401f6346c9c302a1",
+      "fileName": "./.github/ISSUE_TEMPLATE/feature_request.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7bb72b6837334dee6bf903e70d2d07305aad58c44888774ff2535569c5163e9e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-de80cba8aed32daece683779a17cf6241bee1f5c",
+      "fileName": "./.github/ISSUE_TEMPLATE/research_scenario.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c3010bfd04ee2b70a76ffbf755e60c1c27a5cdaa9ef9f14a8479d9ab00023249"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b8baf23d7ed7f2b79b86aeb041867428fb196428",
+      "fileName": "./.github/PULL_REQUEST_TEMPLATE.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6ca203fcbd91711d59765be196134fa9abdde74b6f1e55252ac1d209ae1e4b9d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-091aff741808a09242f252264b14f4a9adaa5305",
+      "fileName": "./.github/dependabot.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e807e922f38e6b64a4601e1bd1e5535eaf39d6203c369c0c29140d1acd8211d6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-899ce9c202bf7bb5480e72836c3edc773c9c4244",
+      "fileName": "./.github/workflows/ci.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f4bb950b11e5d58e8a05616daa616b32e232c370751199b3b266fbd11aec9055"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-37c182e857c9d9bb0eb6218a00392ab9f8e4d264",
+      "fileName": "./.github/workflows/codeql.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c73c8f4ad47ceeeadb960c35a99270fb0af825553d876b0783c455fbf3e72b49"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-17eacf801ef35ff728e11f0aff54241c471f10e5",
+      "fileName": "./.github/workflows/dependency-review.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "96388ee9d22056def4ed8503b81b2c5a19aaef89024a0b62e1c312a5799a1ba8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-16911b9809e0d05b7b124ba8453fa5303d74924c",
+      "fileName": "./.github/workflows/release.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "48ee8fc55cea42207ca3c73ebf0095b6b3fae0e59648e5af4faca97cf7965a80"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-52d7b9535768944654a7195c4bec2b3e45fd2db7",
+      "fileName": "./.github/workflows/reliability.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8d0490c51372c1d03e6701981b1f9bdfd53834e06db288c1c0cd904091a68857"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-160a5c8af780904dc5febc24be443b92271fa89a",
+      "fileName": "./.github/workflows/scorecard.yml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "72ddae4f7476e830613b25b14d076341535987a0eb842af9aa883d9145e51151"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a5cc2925ca8258af241be7e5b0381edf30266302",
+      "fileName": "./.gitignore",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e1695dd1150f12c1c01e6ff15c24837ffde7da3cd96e33ea71dfbd0dd2527e39"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e8cf8400d7c7ad627414ea2e66dc3f1e34e455c1",
+      "fileName": "./ACKNOWLEDGMENTS.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1d7b1bdf7ac1342f685844036f532b7c7f2a527a3c5ccaaef4ed5750ec292bd7"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5353c59756b71d229a2e137daa90d25876df7884",
+      "fileName": "./ARCHITECTURE.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f16c7b3482537360873f9d310732ec03103a33cdcb81d06a2e19d271318d3734"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ab09011fa121d0a2bb9fa4ca76094f2482b902b7",
+      "fileName": "./CHANGELOG.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "90cb51871d61d06911ed1fd2b5786490ad8b34f4209d75862b61929b360b80ca"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2f473ef69010f24d2546e13263bcc2c49befd2f3",
+      "fileName": "./CITATION.cff",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ec9a579d25fa1726ac483d624302ac87e630d02243bc963f08ab28acb8378d5b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-abe895765c4ce08c5dfbc95e5e3c5db67ff92ded",
+      "fileName": "./CODEOWNERS",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9a10ec32539e815fc3d687240d0118ccaee40d8776c318547f77975a030dab56"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0834ae016f8fea5cff771880c0be1d55299732ff",
+      "fileName": "./CODE_OF_CONDUCT.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ff750100407cb5edb5d4137f114b719dd45143abc5c5acc3cdd972e35d62de9f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-51870d897474dd855e1d28db8aa213ad852e8598",
+      "fileName": "./COMPATIBILITY.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "070982a95b551964d12b139affd16ea9fd76ab99a1e32f335125e67573a8d23a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3f454a98e586d1aa0d322e19afd5e67e08f2d3c8",
+      "fileName": "./CONTRIBUTING.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3521f3eadebd7d70b3291cf94fff4714bc298eef71ba0f3e25d92fff7d663016"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9322c383312b7ae7402aad5babc0fcea8c8ecf86",
+      "fileName": "./DEVELOPMENT.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ff02edd37bdfc72ea7565972256e2f2f6716efa2074842a22f061328f7e20fed"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e8fb08ac85dd92b55c30334a9a08e1a11b4a8a9e",
+      "fileName": "./Directory.Build.props",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f1b1a0a51d75dd21897719a3668c78365266b96acb04982367baf6b6d9f454d3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c6f852de4ce9ae9c5b4d3937b9e7f3969905fc67",
+      "fileName": "./Directory.Packages.props",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "582a258ff5c3069f4fbf9ddc67794887f5fd46a644da1ffc2d2e6f02ed4d38c8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2633952aa81b372f50626782c3b45ab06d1876b0",
+      "fileName": "./GOVERNANCE.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "73fb25f4decd074cc7fcf416c04ce2727c69a35c02204d29485fcb2160ba6947"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0398ccd0f49298b10a3d76a47800d2ebecd49859",
+      "fileName": "./LICENSE",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "af975c9737b3bdcdcf7ec3512b3dc936f91cc58a3c9152a8e4b0803f667df6b9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-dd8f95b154619311f70c666f4ad588f54ab04530",
+      "fileName": "./MAINTAINERS.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "396c8150ce45babf1ef5a859e0ff8ee476aa2a3649abbc4723a3fc922ddc2ebe"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-836efb6e25a091dcb4ff8e1dbb2f0be6a5cbf14c",
+      "fileName": "./Makefile",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "adfa5d2a130f1f4fc70bbfac3b91e2a5f876dd23b2c8020eb844b83e64715ee6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-fe71871083ca490e6bc0da33fb48ce231f820a94",
+      "fileName": "./NOTICE",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2e60454601ee5d981b41837b8c34c7c46f32281858714fea89be54ace02ec4cc"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8e91be704417a75887014aa049caa4a6c259e6e7",
+      "fileName": "./PLATFORM_SUPPORT.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b157cf97461c16581f0fb823060affd5c489a95f1a0cf3a08ee863daaff625dd"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d",
+      "fileName": "./README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b5930e2b012a003ba0a667f7f98253575e0fabd8b55f80c16647f00544c924b7"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-aca0bc867aba812c0f64b734f6f15684711c22ba",
+      "fileName": "./ROADMAP.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d9a62a6b7a8d55f518bd3a79ceb7c72e094067a29ce8477fd5c6171b69162e24"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7c875fef54268bc433a7fc46aa5fd6e96d58f32f",
+      "fileName": "./SECURITY.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f02314046d71ca352808e4cf821fc410838800b879d2228804f71de331462c04"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1333b7d232da744c3bbad02aa85f16b92d2a2789",
+      "fileName": "./SUPPORT.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8ff78ba2da9eb3636d297c4c9e5b58958503f6b239d3fdb4d41ed8252ac96245"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-52b5e9fb41c2de163e225b6f540f66d3a72a5e63",
+      "fileName": "./THIRD_PARTY_NOTICES.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "55375b4e6cbf66dec87d0e105e81aa84df87d8997ac47db6b768c5d884fe7627"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b33892fbddeffc3368077b4904ad0b3d562a7312",
+      "fileName": "./VERSION",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a0ad50640139a524f86591157145bf1d4674ea9c065bfea21558f0f7b04430c8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-777d8ef8691e0836152fd8d70fcee1c009bb9e84",
+      "fileName": "./VirtualSmartMotionCell.sln",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f8e9965214c1ef09282c27f95b708499d78544a7c740275fe0d3b41fe40a0391"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5594e19be19ab2cbd4f0c2d2099435e88a1d33e5",
+      "fileName": "./benchmarks/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "22c241b26274b4b29af1b15e2b601f63790056af15fae1d897913c984890091c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8ee5ddd7751ac456b88a986b00e46cb0e5c9adc7",
+      "fileName": "./benchmarks/manifests/combined-fault.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4c6bec1ac26de67dd93c44f5fe6128678319a25750e2774de788c3ef9d3f7588"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c5c3e5dc1c5d84f024d08639d8606b808f2b02c4",
+      "fileName": "./benchmarks/manifests/machine-fault.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1374f9f0e07ee98dc8d4433d58c471229b172bf0fb14c983f76d9b6448ff246f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6af25515bb25d35c9aad1ae2784435aa39202818",
+      "fileName": "./benchmarks/manifests/network-fault.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "455f2263f4b7b4748e7fd6b87960dba9139ebc5cd3135a3da5c14d6f9b7c73f9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f8ddb9cd98a42c6482ccc422381ba7eaf263b636",
+      "fileName": "./benchmarks/manifests/normal-operation.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9c782c2e5594cea6865a4f573847c5a961353ffcf1a92a823f271a5fcc05047f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7728799ad124e5ebe2cd9475f42f8d3b0414eef6",
+      "fileName": "./benchmarks/reference-results/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "40a568fe7dfd10fa680bbd066cb5eefaf25c2321949d49b3b010166f5b288bb8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8a80a477f72b3c1875ba248629342a7384a7c250",
+      "fileName": "./benchmarks/schemas/experiment-manifest.schema.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d78c23db22f46623aa520fe58fb7be9721767a57bdda6979854c04144f99d997"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5b4711370ab7eafe2593e867361c66e4bf677557",
+      "fileName": "./benchmarks/schemas/fault-taxonomy-v1.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "689490b3edd4ac42f6c04fbbda0b71ea7e6ded1904ecf81c4cdff8256ee832f1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2701071a1490f4576d914b0b84bc3185e0aa2854",
+      "fileName": "./compose.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1d053eae2b0e961aa867b6906c50b603aab44e416475499abd70f7ffc30f3d85"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-920dadc62bb962c557aceec9e06d952394e31b39",
+      "fileName": "./config/recipes/standard-widget.v1.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c09c62cea3b6c12b1e214a6620f5a62281a98d9c094bc285751389f4ab7d36f1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a62737dbb3fac01bbbf417873c6155883b46a6f9",
+      "fileName": "./config/replay/motion-replay.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3fe469c6107c67574cda18a7cfd7676fe77da43e987b042fc136c93428dd0ac9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-fd60ec362f544f9f882f543ca75f45a7756162ad",
+      "fileName": "./config/runtime.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "edab77a8d631fa0347f6a0a6d83b21bf613b12a85af553bbdd2a5062095715e8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5669067d75de9b0e51ac676a0b49ece4e384918e",
+      "fileName": "./config/schema/recipe.schema.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5d08b88419901114dfccc08f47ecd04baf683fc42f75f48c621d74bd943371a3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c56876435e11ada1f457fc8c7684c0840a8ea9bb",
+      "fileName": "./datasets/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c485268248066660be448f2674e8283df4cd8d91dd6c3cc6bea56dea7e9ac7d5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a2a4a9c2b9bb0a21fd0f214a2fc861fd32013ebb",
+      "fileName": "./datasets/cards/dynamic-gantry-v1.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d5789fb0a72393847722df987549ecc924d0235fdcd5d03717191eea30c29289"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-95801654a8c82385f26530e8005eddf4ff9db469",
+      "fileName": "./datasets/examples/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0159736c0276049d8955b3a276e7863d9c0df3faa308505533cd8167f59020db"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8ffde13df31f212345642ccfa4755f3bd99e7e61",
+      "fileName": "./docker/Dockerfile",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "064410decc91dd96359aa2a1a1da5588b4d2adac54e48fa2e5468fd0f8b6a954"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1f620b7be909a07eb1b5ecc92c336a7f2abc6750",
+      "fileName": "./docker/Dockerfile.mes",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d5a87b1553c47a0f478b4aa7cb77c29389e48234d494a6eab67ac032a2994ed0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9f7cbce127b94a94ee14460050fbff2ce58417d0",
+      "fileName": "./docs/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d88ad26344c9d57ad68d59498bdb6713321012c239e41ad1beb68a0bbcea6bbf"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0d4980cd70759eec33302d18eaefc1a10e225734",
+      "fileName": "./docs/adapter-development.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "27b5edb0eea4a6e4d142f175b57ceba8345138bc51eef9be5f4fb3730f6f5c04"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6eb2ba3cefd1200a223ab520fa11a71f1d2500ce",
+      "fileName": "./docs/adrs/0001-modular-monolith.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "028629e04e71145e95beca558b84471103e6e9a251e6cd4f1eeb76540beb3912"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-51557eec98c5a962c36613e9a35e7a5dd8ece7c6",
+      "fileName": "./docs/adrs/0002-headless-runtime.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ea8d7911e95dacacc72f16ce9bdae9651d1084a83721007acdb7a349f2b9a5aa"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6a24e7d742e652c8287024996461a4805eb81604",
+      "fileName": "./docs/adrs/0003-bounded-command-queue.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "22d9938be9f566608ea6dfcc20f25b4206bb8c5f726c7a879a073fa206e440dc"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0eada7b84ad8948e0cdfb5cc71f710d8b5e84e3a",
+      "fileName": "./docs/adrs/0004-immutable-snapshots.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8db2c37727c01927ad768b9cef46154c7f0e530496a5aeae6369d4aec2399a87"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3a75bf0147dbcffa9ce679361adccc41af30e0b7",
+      "fileName": "./docs/adrs/0005-file-reference-storage.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a00a550b6117ffa2d83a1bdf7e5ec28c905a1686653ad9aef67d552784965723"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-737a21c1da6202e42803f4b0032a101741c5a5a0",
+      "fileName": "./docs/adrs/0006-websocket-not-signalr.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a70b57de231a77f42832d4387a2156c33bc0b37a065de1494bfa60ec8b7786f7"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2d4f2610b3d3cfe803c3f6138ed3994d7603fb9b",
+      "fileName": "./docs/adrs/0007-avalonia-hmi.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0a40f032480c0dd8ecc71bee84d4bb9759423bf44b743a002a59afd5d3529760"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2ecc617ecdb79069c015a0c790be9201081702f2",
+      "fileName": "./docs/adrs/0008-python-reference-model.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "13d9744ba6ffe9cb5af3d7fead94cc14f5f59fe32beda029a102516823918f68"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-07ab713d93d80c73a970f8408b8a4546317f3cf0",
+      "fileName": "./docs/adrs/0009-opc-ua-simulation-server.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6ee3fdb48bdbeba6989c2a1cfe74ec34336349edd5900036a6db200808600a93"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ebc3247cf08aff54b0d1de4db5ccf2877a162715",
+      "fileName": "./docs/adrs/0010-http-mes-and-outbox.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1c85e5e35df7f4c13388236c8a5c74933d73a5548a096dc31b4a83c4f97dc8ec"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a75d1ee4a4326111b9c6a046c32a12b9e99de0f4",
+      "fileName": "./docs/adrs/0011-opentelemetry.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7c12cb26c495e1c25ccab423b70e0d176a7d633532c1c684b5ac4864525d289d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b8872b84b652f3fed484ea15e8247134b1f3c3cb",
+      "fileName": "./docs/adrs/0012-threejs-digital-twin.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "92d0b24bbe6108dbb45d3d9bf976ac47948fa12c320758bbf071aff2399e2bea"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1de5c3f1ae9729dab6552863697faaad715ffb37",
+      "fileName": "./docs/adrs/0013-research-plane-separation.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "464f90ae6f64a97b1e1a37e10693190530434b9e8d5b279fccbdd5fb57f4b59e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-923922439dea082f5b1dd90f54e6b9ea4c718611",
+      "fileName": "./docs/adrs/0014-manifest-as-source-of-truth.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3ff571410b371d934d14034956e208ebbe8ab9bd539c37488a15b098d4c8f5a9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f9597cbe7cda257a8b4a607e2b851f722fb2aa98",
+      "fileName": "./docs/adrs/0015-pcapng-and-parquet-evidence.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6f2f571656199b26b881bc317f2f04aabe458c78ac55871e77232a374b0ebb80"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-4ed3756ea03fb3c2ed37601e7aadea03bf0f1f01",
+      "fileName": "./docs/adrs/0016-ethercat-wire-format-research-traffic.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5db64630b617d60bbff89c920579bb8e98d39cbb92a7a53b00712b9933ed7e10"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9557e414348c4fa98a4f4699a1ad7e2f49522807",
+      "fileName": "./docs/adrs/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ec123aa35e96603cb46ef5d51536efca1bbedb7f520b2a0dfdba0fec36ddf248"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3c90b152fe86524a959d5a9898b5f7979e354770",
+      "fileName": "./docs/api.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2b6deb2c495423b11e9e56cc378184cf9ae1123f8780fcadb0277dce22138054"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f6c7011c316294fa5960d027b57496ef7f9d2caa",
+      "fileName": "./docs/architecture/01-system-context.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1dc6a1e42928b2236d82534d24ad7633deaf0b2d723b368c169ab7ffeeb63761"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-eaaf88af4cd757bef65acfed3c311f924d4d5bce",
+      "fileName": "./docs/architecture/02-container-view.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "12f1dbe2af5addb06786501470f02ff1a6f23308824f56ee6355a49744120383"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-871783d180802335b9ed47de8aeef72c63aab224",
+      "fileName": "./docs/architecture/03-runtime-components.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3dccfb14fc19c4042db5b8f59dffc431fd891ac2c282f67374fa9af2d0316061"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5fd85322d042df37d163dc2065245b03db4e0c76",
+      "fileName": "./docs/architecture/04-command-sequence.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3ce9a6ec673a9ae03deb66a7e33dc1a64457a4bc719acec592c5d51009ac8bf9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-475fe7ea6c1d40f035c6baf02fbd40214947cc44",
+      "fileName": "./docs/architecture/05-deployment.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5f4251cefa5ff9a1e319b2dab7457c4f8df7566a0783584d5f2bbd3a3db1bd3e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-26ee0b96b83fbad41b8249cb173db67777869a66",
+      "fileName": "./docs/architecture/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "72f710b0a5ae32c93827b157ce1b5c05364f93557c3b0447f66168c20b4c1ea3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f48b101bb900bd95a129dec0406261da79d81389",
+      "fileName": "./docs/architecture.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "007f83339d95c28ea14f4f88377d819952c3a89bdcde067584690d1f4ded606f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-52776ed0cb938550f59fdb2840132f4037662cab",
+      "fileName": "./docs/assets/architecture.svg",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fd61e6d68412c89e2c6acee91c9e0cff03e28a364a73201faa9dc4614519cc5d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-97d8b26ffa56f8fa206d1c3d46a651b17031bf56",
+      "fileName": "./docs/assets/hero.svg",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2338a72c2f5949124bd405a2e239e69f1930524571ad2564c8f5ba23381b6c52"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e8b0e6e3d5e3c14c06b0dd37e20244a4117bd8d1",
+      "fileName": "./docs/assets/research-sample/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7494942083cab464d621ffc3c97bf0a125c57b5c885bd9ea149c33dd6b80ec8e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-158aae6b6c93409bcf73cdc260216832120a98db",
+      "fileName": "./docs/assets/research-sample/manifest.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1374f9f0e07ee98dc8d4433d58c471229b172bf0fb14c983f76d9b6448ff246f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6d45c0cd0abb1a40e3c496e624ced283530f41e2",
+      "fileName": "./docs/assets/research-sample/metrics.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6f9fe7c9a90dc235ce8deeb061f5ed4c973735d3aa1f33e780bfb4c62c81a8d4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c3fcfdba51b484570c696d74e282f678d8605124",
+      "fileName": "./docs/assets/sample-run/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e6706eabc0e739428c59baae824d95bc5a756755416b555ba120fdc6bbd12330"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-36c40002e1e162a7724610d92039d7c16c29b487",
+      "fileName": "./docs/compatibility-policy.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4b590d881e6324ffa6d458de48062a6d012f774055414de09c62fb21da67451a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0da910c78d9147f4a4e75b1baae232db2512f3f6",
+      "fileName": "./docs/contributor-quickstart.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5da21a680f838e03c633d1ba323fbe2e1c6fcafdd13447abbf4d9f4be33fb4c5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7afd38104bbe1ae159937f3972c4cf39d87a0710",
+      "fileName": "./docs/cross-platform-release.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "aa38d3eb2e200a6bac12b6487a00a4fb187614001d1b685fdfc96c90c84300b7"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b49efb46580abbcdd27f3928195703a2407b1d5b",
+      "fileName": "./docs/current-limitations.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fe3d39ddea58da77f91fb7e0a3adcec853b829f933b8b8146fee6e2c9317b183"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f22196e675abb17b5f033da8ec2ce8fdb061f67d",
+      "fileName": "./docs/design-proposals.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e96638b0164b9a11bad1ec4fc3768180509c933e1b1cf44cbb9ff8cd9491376b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-88e7a8e97f7b3a499c21ba85f95c8ad3f3bff2b7",
+      "fileName": "./docs/good-first-issues.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "59b21c23a1ccc42007f18f8faa9b6ea6a5a30d623edd2c9d72b340af82697a8d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-766b0bdc5e973357b41ed7ac2dadfe4c58946437",
+      "fileName": "./docs/localization.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d5b12ce22373886e0de1bac19fa62a95b2c042f22abe4fbd7ea1bf4b1bd76868"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9ecb0adeed050802498c4e3a9a94fda6723059ad",
+      "fileName": "./docs/maintainers/labels.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ec79a9f8e076f0316fc6b37f689fa78805cb630b36304075bfe9ab392117fce8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e550844ab92ef6cd74791140ee707c285ae8599c",
+      "fileName": "./docs/maintainers/maintenance-guide.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "840916e11257700d6c631a031fae6861340fa82b9497e7d170aa2749e6284dc5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ef7fe2bc894d7f24e648825155f3f3cfd38db203",
+      "fileName": "./docs/maintainers/release-process.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c39e9be70fa9765330f6a000eb90e0d3136a39a301f9ea2541f2efe0ecfd179e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ecbc8950be33f46e29ce10d62b930befce212152",
+      "fileName": "./docs/maintainers/triage-policy.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "83a1ccb1fc10e64975ac5e18b272b991d844e17651fb3e79ee1d5709bc172d55"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8901309a83add0e473003314f7038e4bc197c89c",
+      "fileName": "./docs/manufacturing-data.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5c535ee0e66a2a611a7951475abddd9ce2bce8c4245cc880e049ff8c0197bb38"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9d1f05d3aea0b60ec8ce133a8d759cc2b9a12f07",
+      "fileName": "./docs/mes-simulator.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f0e41daa7b6d3c40fae81846a9b74e7016f0e0b78d4757cf8030b9ad36d70fab"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c85461f4013c130c4428d85199034a8904157426",
+      "fileName": "./docs/observability.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "57a45490ca14f403bcf9aaa3f68d326a76f0be619417713c443b577d60a708ee"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7a7f0c09978e4f15945392f6579aeed227d0f62b",
+      "fileName": "./docs/opc-ua.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a7a3986cc2093c82ad24d7b3f1063e30ca77ac7a40ffd12632a3fb778d8c0c13"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-475066981223a5a463d9245dd5a816fdd4e8f287",
+      "fileName": "./docs/platform-support.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e29837dada684edc9840f93f9faff09a568a3a38a1877a1f1c15b16da304e187"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-217a7b40bcdd42b56d7a576901bb11a424ba2ae9",
+      "fileName": "./docs/portfolio-and-demo.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5ade7630a5a4b7cd125890ba61394bd04d9b3307cedba248e58641ef2f891471"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0f8d7150090ac5732a7ac027c37962b3aaaabcd8",
+      "fileName": "./docs/portfolio-demo.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5373a692d66323724b2c87bebdb5fe7992efe1c2d4d898175af498ca78c91dc8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7ae08c0a2eb78bf32d509a1602b24bbf798dbd76",
+      "fileName": "./docs/portfolio-evidence-matrix.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cd522d6ad405dc489bc811f4e78e5148699fbfe181b9290f0d9c7f7b39fc3be3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-4302c668facc76abba57279ceb551a9cdfccf948",
+      "fileName": "./docs/publishing-checklist.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "60e338d48a10ef5d453416b21703dd2c10bdc10b8e91ece0d2ba174b97f95329"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7593ae03e2dfe18c4e375d828f764688d0865997",
+      "fileName": "./docs/recovery.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d535d783be45f792249b3d7ab02969a482ebe2935bd8faa1a89ed33df994a75f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-928760f74e6cc0ddb81aff2134c1909146ebc6f4",
+      "fileName": "./docs/recruiter-skill-map.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9c1971e21073a95440ebc4446eb081d864146714a8833bc879c0845c98fe88fb"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8ba724de0b659e92c5d2dc6bfe982a57810e3292",
+      "fileName": "./docs/reliability.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fd61e54f292e46c02e6c43c26f31db14c3cd8fac442ee66e75a88aeb93d86e99"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ad91139d62d6c230bffb97228c0a8f78a2c298c1",
+      "fileName": "./docs/research/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4b27d221f35b67a7086cdbbdd8cf59f0541085ab6678ec96dd868b07523e1bbb"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6ac07ac54481da08f5191f0b37cb40773c1e7812",
+      "fileName": "./docs/research/benchmark-evaluation.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1a7e015ac0d063839fe3f40e5ef89bf924b94b4dc433348382669d1d93660e07"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6ff9f34340c8c1078397bd0e5055da029064240d",
+      "fileName": "./docs/research/cyber-and-honeypot-boundary.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "74e18d058555d94b309069d1a2115b67486d8d50e4da0706aa196147f2ae89de"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-11b3e0c0dbe748ecae2c0f709f441d233a9f3755",
+      "fileName": "./docs/research/data-and-synchronization.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b3d9f647ac08cda5363f313917f76f10ffe8cddfecbc690214d3226403e7811c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7ffffb5461609a18827f3c1ce3f655baa181638d",
+      "fileName": "./docs/research/dynamic-benchmark.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "eac40a52c3bd9a543677cac079d966bb086a4e21c326e5ce3a310c84cf47a1bd"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e21b1bf3ccded1978e65869aabe9ce409457bc40",
+      "fileName": "./docs/research/ethercat-protocol.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "bcfe092f3cc73822bd2ab907183899c1126ac02743b18741b389eb0fbc30fcd3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8df2eab6f893516b702b66c129c431cace89c89b",
+      "fileName": "./docs/research/fault-taxonomy.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "38167a6c1bec77dc5f675fe1c4c52495bf2f873a821151e58562104879a5eab9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cde228d0ae250a3fc9b00f4ef86e77c06d1b6cfa",
+      "fileName": "./docs/research/final-research-plan.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2ed885001fd2423dfdd961d4d6a01d20b887b26f5f84b375912905e372730718"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-88d929af51739665fb7bcf3902f5448f620da23c",
+      "fileName": "./docs/research/ground-truth-and-labeling.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6d59706c133efe8b1d3834a1b5dc050a4d7b0224f72a80543e243ee2e56b0821"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2fe26d66c7d420417d86634ba8a0b024a29703c1",
+      "fileName": "./docs/research/practicality-and-community-value.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e3e8a4613022d668a2e6cf3d8a7a197d835079c9fc6e4ac680ecfadef87ea80c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cf32a30698cacbd61dc4cf8585a0cb040a731b62",
+      "fileName": "./docs/research/publication-and-reproducibility.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d76def076018e5ef063c3d4555d80b0e2ae9a58458dd19453b124c01eaa6ecf1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b491e9395549132f7b89eb1706de3f67c948ba13",
+      "fileName": "./docs/research/research-governance.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "82e724d636e5bde6d3b0786c0b4a5e5d81570108ef1550d1034ff018dcde89d9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3d4ac60100acee35ee0c7a27c293c8f4af32c405",
+      "fileName": "./docs/research/research-questions.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "696b95f8e6dd93f8882d726737cb23b14c61fc566eb1a0437e7a9d467c765a16"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-00d1487c1bbd33c4454b7a1b8e476bebed57c13c",
+      "fileName": "./docs/research/visual-experiment-studio.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "53d3a9e11d66e28ad02a885e16d93c9c25a4f4c88c79afac2fdf6f87a4cf8b56"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c0ab381d6d87ec41f3f97bc16b69d2b1cdb89150",
+      "fileName": "./docs/runtime-data.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f53a4e5bfdb17201925f36903a8522a2854a375d6992177bc89614147360d4dd"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a43a3bdfa345d6ddfa4602be9305d4c513e5eec9",
+      "fileName": "./docs/testing.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d8cf6e97b4b9900f1bbeb842d2bd71fa551f336e9fc58b4869991a265b93df58"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e9a935606f4a4bfe319bb7239ae037f1f4e752e1",
+      "fileName": "./docs/threat-model.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "58feeea49a2d655c5e2b4be7ab2461f4f78a925fa8357414cd8e467a5357df6d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-93ef25bcc0f05e4825b3b4f4551ed1f7072269b6",
+      "fileName": "./examples/VirtualSmartMotionCell.SampleAdapter/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c83ac61215ce9a8fa1c31c94e086c243cb5fc65a5c394abac378fd32d8c7df64"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5d31dbc999fc5d7530f498348e6be2b65e18e0da",
+      "fileName": "./examples/VirtualSmartMotionCell.SampleAdapter/VirtualSmartMotionCell.SampleAdapter.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "da74398bb4c60d79f256a72bf08a477214b0388438c0d9c5f05d0b3208dc5572"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-908e72401bf48b05066e903472fbc2bb637be106",
+      "fileName": "./global.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ddd94efbaa73cbd137c7adb70c4ab3314abdb37055635f370211fa716a16682b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f1f131204d348551ba273b91c74bb1849619d991",
+      "fileName": "./reference/python-simulator/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "be8d51aff6714461af2d250794fe1c93176f81335422ea7e6135d6aa2cd2d37d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6783d022c02bb2b9e91a8b9bbf9e70030bb6e2cd",
+      "fileName": "./reference/python-simulator/configs/demo-cell.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "69753acd4a2f0bfa5d6a338705585bc6292c797dca163c7bbcb20b27e403f8ac"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cebd01c210780b5651cfae9b674cec2e9905c8ab",
+      "fileName": "./reference/python-simulator/configs/slow-safe-demo.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2d96f62ab53e31de6b4184d6aa362c80e5fd24196b8a661c93cc09da018738e8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-53b6834a1543bb80254cf1a844942a5258615018",
+      "fileName": "./reference/python-simulator/pyproject.toml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "be2d2f93157748110606878f76cdad4022cedbed2636087afb726905712c5e9c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1353633e8bcebe0e067e08c0e14b2c16efcc77ed",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0d4fa94bd8d7b92df695825f19b96ae74d82f321d0277510a606fd4ddc0d65a7"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d5b7b1d395e76aa5ee2d950e2e30bf4c6836902a",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/__main__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a2f13f78ff13be4bca02bfa43e6d3d0a12575395a245f71d8f1452bedee8fd8e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-458ecf178737516730c20b489aed9d4c330e1020",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/api.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c4d4ade022fdff0cc21635ebbb86a38536df95bb97d17673a9183e64817fa129"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-09772a777d75f65c7e65fa4751a6b2cc1acbf104",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/cell/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7cbbdaf995b955d302380e1fff32f4411c6fc99a2c83477229fada0e0a337aa2"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-eb9f133301a9f069e5399b9f7f81c94008a81aaa",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/cell/interlocks.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "caca4cc23a40f8fc44911eb7eb421ced3f4ce41309d7dea02544d1cbcdec8371"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5b512b42dc26b2aaa623213795f15eb8c14baa5a",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/cell/state_machine.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ad22573959af6cd361a43eb888e17517e8123dfdccd938a3bfb52d13c008f44e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6fe1ae79c0c21adc4c9d438a7ac3bd4e65e9a906",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/cli.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d8dc620217e28b98932973dca34b1edb893b0d0d376bc0d773541bd9b3c66a8e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cabfc48b38c4ead47a44669ffead88ed72eb9ba0",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/config.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d46881bd931f9e4ecc360f6c71218b8b53c0b83dc92a42a954645087540a5529"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d85e48560d66595712071d4108f2c2057d96f126",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/control/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4cc94d03cf11060eb5f674dc5dc60099d291d605497d9eea6ead6b915bab05ac"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a5edb0c301d2ec30bfcc2e40f574f58448e2b706",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/control/pid.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2fdc7c9763bca9d3bb493e70f675931bd1b843120ae33f10e36d74bf87db38be"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-bcccded2086d63e4bc774f2a0b00f944bf9767a3",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/manufacturing/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b6d037a0a6912c61a22a35811edbed13b2b73bbb37b9cc387d1276349437645b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-77bfa79cd622fd520aaea26bd34f485bed74015b",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/manufacturing/oee.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b57757cab0d3d3828492fe65f0c916bf1cd6a187e9f87ae963ebae1a653694fd"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5b25e45d53604db53023e3e2ef6cad14dab65c01",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/manufacturing/telemetry.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b4ad36a01b6e34381b54dd3b07cec3bab745baf03838f0aac1f33f47ed48279d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-028a955b0ad1d5767acc3ec582673ced4cc73a09",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/motion/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c2ae7606e49288d5b5ca71bde222be011dcebb16acb697dadf63d930827622a3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ec58e91d43351b9a7a8dd6d56f46d0a87cc353a4",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/motion/axis.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "caf3dc72db36839923922dcf8f3e91439b82e9d2c3f34f2bd90249453610beec"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-36e0eb8d9448547ef11a11ff46f5b0bf53ef4f19",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/motion/drive.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2e7bacfe592eb429077d751ff651a60eab97433b8bec76953fabc5292646c861"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-97a5f7ba7af0b560a84a0840e50ad2a5596bb129",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/motion/plant.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "396b5a3b3aeb3f8a7872a82348f27c9fd34a310876bd17ae4017b2e44b886ac0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-43f600fa51710bb700e4b97e2a415eded0ba316b",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/motion/profile.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6416d84f61740fd004c963b0e6e97b63797e3f61355c274eb1f9363885b2cfc4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8f62e6c4d5b486872eb99174ca2d7b4464b6d2a8",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/reporting/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8053ab459b32ef69e3b8a994915f8a29c957bb1b710c4db4a37b9f288e357860"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c656b3b169e04c2160728060a8eab5e473fcfaea",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/reporting/report.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fd642589d60229fe921057bc33cc006eee7a8a9129ae8c5c870eaa9085c3ee35"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-fe1be12eeccb32c97af12d12a3f8a5451877651e",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/resources/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ef171fb3ff065328fa9bfc11bbb56a988457bc69b0baa6433eeb261e7c8293f5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b2a4ce4e14780ae889933012ab1cb41e75d3a951",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/resources/demo-cell.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "69753acd4a2f0bfa5d6a338705585bc6292c797dca163c7bbcb20b27e403f8ac"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-dca103ef7ac553a9147e29c4a0bde6ef8320572e",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/simulation/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "50645516776c8f4ffd3e652dc310d1d88a2bdc89e50be1e6e770a42515f8a784"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-03952a54b653cf005f71300c767e71675133cd0d",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/simulation/runner.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c17628e46f0ec606147f7a6c9b9c261b4d216fa3177800070db417e15535e7f4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-20e5b8e0dea17f2be46c0d7ded46fbc6d0516a81",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/simulation/scenarios.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8107524e4868f9324d8d94bb74c2fad75b280b602dabb2dc4f1279a4420be8ec"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-90d6eb70737e9c48b0df602223d2512584da57ee",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/web/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1fca1d6970a42a3c76be108a51c3dc5b87aeebddce6e43904403d9ed13b18bbc"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3c8f741c090783938c2036a21b82f72d06fceb67",
+      "fileName": "./reference/python-simulator/src/smart_motion_cell/web/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9d179e268d4d555abd2475634235d06fb4d01bea5dd307076922901d43e86129"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cb5869ae0b075a9cf88e3daaa074cf4dda20c9ca",
+      "fileName": "./reference/python-simulator/tests/conftest.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7fc93357fad630fa379156785f7dc514c23b553e721e19486d9f3cfa98159fa0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-82057cf9dfca2a486588f65cd6be24addcbddabe",
+      "fileName": "./reference/python-simulator/tests/test_api.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6d42708fedbc9b68d2ec063ba7f6fc8de6c0a01217b432f181aad5dbca21d5e6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8111a78e12abb189932b7c5677cea79e63daea09",
+      "fileName": "./reference/python-simulator/tests/test_cli.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "816eceead1dae2c375e6ee5d7fafc9e507ef44de31be83623a98af6b4b4988b5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c1882f9ff65028ad2a602ac5d44c68cd7a361efc",
+      "fileName": "./reference/python-simulator/tests/test_config.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2fb69c7e3d69d732938be02d2832c78674b9f974b217ed1d31249324e1aeb342"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-95a9a9531344d912e92ce67d3ddbaa2a0342f626",
+      "fileName": "./reference/python-simulator/tests/test_control.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d0c752757ca51de903422c516fb7ec2eec863652397ad1452a30140a86586c3a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7970433c38cf754234547c115ac354fac40fbfc8",
+      "fileName": "./reference/python-simulator/tests/test_machine.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "92e133b206215de5c7535f7d383ab49e3282c012034aa864f6f6cf1b061ac9dd"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-84ffdeb5356caf33ae690e2af130f90677823752",
+      "fileName": "./reference/python-simulator/tests/test_manufacturing.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5c88608635989c57e7b59e0bbb784ccd44e7eda2cce889e1f880c2c79d99c82f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-780c6921fb5ef390ec22f82fca40721ea687138f",
+      "fileName": "./reference/python-simulator/tests/test_motion.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0a36cca30005528840908d1acc57c65d3f41e9e6a2e50803914d00ebcc2aa598"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2389df5797d12aad6df0a27f20258d7e040180dc",
+      "fileName": "./reference/python-simulator/tests/test_report.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1eea4472a8fbbc5c06344711c2f989d12836164f557ba060e3c110613a80a40e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c5612390434c1a962f52cd72a4482b1c98041307",
+      "fileName": "./reference/python-simulator/tests/test_simulation.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6a0efe861239ca622d6fc3543184bfa6d239a76dd3d32bb4720ca94b24a0718e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-601779a9946a30a49ab2e8d1571f6b2394168ed0",
+      "fileName": "./research/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7aecda2c731615fc47805f24b0389a91e646f99e16fe8e38b5b4ee5b27e0b8b6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9348812cfa942c1e3d67bf0e0cd23649139c50ca",
+      "fileName": "./research/pyproject.toml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "926952765aeb6f85693ebc28d7f3c4c97c366eab23a591e30757d5e8d7e65f61"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-eef4f7c5f0c7a8ba91c1e0462938b3a09d67195f",
+      "fileName": "./research/requirements.lock",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0eea8a07cbaace05a3b7b84e61dca5b0789596b44007f389eda673f4c33fcea2"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-caaae0ed9aa4d1394158de5b8b6d127bc3985acd",
+      "fileName": "./research/studio/app.js",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "aef4022107b8eaaa6b8ba163591cc0377bc374e75b7b9c9e294427b1e4c6b9c6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0e8ec40a85256c40ebb5be8abe08cd2009f3be03",
+      "fileName": "./research/studio/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6327a61bb4ef43b7cb13711063ec783a783f4da112ea9deac89c61b8df072b62"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-05cc9c75f1230dd76348ca696c875934ab534536",
+      "fileName": "./research/studio/styles.css",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9cb047f8171684e74d4b7b2accd64259ba6d5b068446f7839debac5889539b08"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d9e8cff5b49e471c2c928eaf9550d83138a1cb95",
+      "fileName": "./research/tests/test_api.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f9acbcf44323201cec26d2a36c35b266392bd2ed95a9bc5e2f0fab14998079c5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e5fc85e0c59ca896b831ea413ec41ee87083b482",
+      "fileName": "./research/tests/test_dynamic_environment.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e96bbdea22e2fff1b09fbdf23ffc36bda11c4c418a826df3f3a2b5169ebec5b0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-033cc7e72ecaca1da734e6f45a3e9f6348ce54ed",
+      "fileName": "./research/tests/test_ethercat_protocol.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5239f9f11ca9872565c892b1d9123e0c882ce0d6e95455cc9923ebf1d7fe2aed"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-dcdc6500b238688f0a6372e890b04a6af97c20f0",
+      "fileName": "./research/tests/test_experiment_bundle.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e7172f9112524feacc527ea59c95d2be5ecd9b92826cfc45722f56da2ff57a88"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-645601dfc478d396bf97ff369b8bdd7ade653bf1",
+      "fileName": "./research/tests/test_manifest.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e994533a0bff749d8c36f7f6305875ddfa56a70711e6ea9063cb661236cd15ed"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-4813233825d5c65fd18ed05f7defd2539dd12613",
+      "fileName": "./research/tests/test_network_semantics.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d973142c5ab4bded7cd7682751841b1501a27d027fc189ed6d401b877c286987"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7a8227a6323406886f4d90a3b72a7ffbab0e2bd0",
+      "fileName": "./research/tests/test_replay.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "83f6a0824348f278c2017a2ab7825f43c3108b711f8c48093a17325c7ee1fb16"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-24dda906092a0515cbc5ca49ccdfe8d42c0f96fa",
+      "fileName": "./research/vsmc_research/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "926a8672bc7a3be9f5e4defdd58c531f83b3abfdd8aff6400da8befa3fa505cf"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-54094e0c2f349480658815631c125333b48a7f2f",
+      "fileName": "./research/vsmc_research/api.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "470685b765a2d8ae70bc162f6932db1b9c46b7f6e84c91e68219fd757a2c353e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5ca04bc3db6b289fc56604b16e809c2b9429aaf7",
+      "fileName": "./research/vsmc_research/cli.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "49a670b6172b28ea95da71093b3db13da40401d1bb4f8f827379bd5a003d72f5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8952e9fe290154e05fd0f5ddfcaa0adcd02b94e8",
+      "fileName": "./research/vsmc_research/dataset.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c6501431277c37fe40117c94e482704313e40b546ee4bd03b9e1a4a23601120c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f8a571be1f2a9dade797a9f982016b264d590067",
+      "fileName": "./research/vsmc_research/environment.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6397e375b05fc203cefd212f1cf51b3923fdf24a34b19890b2747859ed9e42d2"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7e917080541a6672089afaea9544f6dd39d67c1f",
+      "fileName": "./research/vsmc_research/ethercat.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "eca5a1b7f2bd227b242347340f5b2b3beed9f13767574d088ed733809796321f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-69943144b231777b7695690349a28e280c50a965",
+      "fileName": "./research/vsmc_research/faults.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3bf48847eca28b643e87e4631d729876da9d34d927e644cc5a4f9e659b248546"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1851892a5e7f739aff83fda2584e256d299b734c",
+      "fileName": "./research/vsmc_research/manifest.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "acd4578b0da283a3156d834ece64564b2f63e82d759d760a5760d9fdafa416b0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a6c58159cdf41ee34ecd2382da01d51bfb083557",
+      "fileName": "./research/vsmc_research/models.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "adc18633df74c0a41d8fb2639d9081606e3da5927c43453cf7928bdfc3acb825"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-db06fe31dacfbb3ab3135840d3f955950c68ccd7",
+      "fileName": "./research/vsmc_research/network.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c9f7e96e997708a6531abd45af11cbdd249c732d7b49c4abd635ef08fad84aa6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a4c825652b22cf85eee33125c0caefe6a21bc829",
+      "fileName": "./research/vsmc_research/recorder.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7b668b4cda3fb461150fa1e4f9db7c23858718990eb0ab567eed4e9be35a3900"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e715f193419f8e31a5bdf8e06ffe8e2d0af849cd",
+      "fileName": "./research/vsmc_research/replay.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9cc29df4a0bac77b6134390bab81472fc80b9bc72524c855f53e81c2c21a833a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2641faa81e0a4f778faa47883465dbbb8ebfb6c2",
+      "fileName": "./research/vsmc_research/runner.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5749edc466639c055fec464c7208048e9a319ecc6c0179a4c343f6254d28d097"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cdc345aaa61e1389b1e540fddd18f54ffd1c5bf9",
+      "fileName": "./research/vsmc_research/studio/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-653d9a47edb4f3d6b32d9d35c90959273366cd65",
+      "fileName": "./research/vsmc_research/studio/app.js",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "aef4022107b8eaaa6b8ba163591cc0377bc374e75b7b9c9e294427b1e4c6b9c6"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2e6813e37629ef93af8a211aa80c65b464c520e7",
+      "fileName": "./research/vsmc_research/studio/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6327a61bb4ef43b7cb13711063ec783a783f4da112ea9deac89c61b8df072b62"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-ce97473a548aa2f2c54d2decd453d11805ce0f19",
+      "fileName": "./research/vsmc_research/studio/styles.css",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9cb047f8171684e74d4b7b2accd64259ba6d5b068446f7839debac5889539b08"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-149f665a2472a69bbd4980373c378c55fb8e1cf7",
+      "fileName": "./research/vsmc_research/templates/__init__.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-97520c30537b6a6e95a0ac6af1bdf5a19afbe477",
+      "fileName": "./research/vsmc_research/templates/combined-fault.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4c6bec1ac26de67dd93c44f5fe6128678319a25750e2774de788c3ef9d3f7588"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c6686d7c271fc1c34171db3bb04f8a6720cb0acb",
+      "fileName": "./research/vsmc_research/templates/machine-fault.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1374f9f0e07ee98dc8d4433d58c471229b172bf0fb14c983f76d9b6448ff246f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3fb724564f0e232112664d52ebff73f36027f607",
+      "fileName": "./research/vsmc_research/templates/network-fault.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "455f2263f4b7b4748e7fd6b87960dba9139ebc5cd3135a3da5c14d6f9b7c73f9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-56d8b1d165ccf52a85e8a91bd976f3f20400233b",
+      "fileName": "./research/vsmc_research/templates/normal-operation.yaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9c782c2e5594cea6865a4f573847c5a961353ffcf1a92a823f271a5fcc05047f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5c852b8795a0b2e91935e7c7b54533c01abf3882",
+      "fileName": "./sbom/README.md",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "32b5ae71c89a7775882b4f54e0db8b6e2d3f30a3aa69e9a8c2851dd49999a41e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1836144462a81bc5787092f2e49c3b5544a2d947",
+      "fileName": "./scripts/api_smoke.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "216e42b7cd2bdd678e6caa1cb5368242960d5689386054d4a746f76f597c5abe"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e7f0269b35deec583e3ca7671a0a7aaa43a27a04",
+      "fileName": "./scripts/bootstrap_github.sh",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "655e4b6df20890c051e3fe2b85b3c15fb09210d2da51bbda721f6d641a8725dc"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f59a04578f1c1b44f0716e16bf520789e5c9162e",
+      "fileName": "./scripts/check_repo.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2bff03bd3e9d039d64242e566261521ad3068ff9bbc9ae0cc0a308cc862e2894"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e8e4bfa38ad20701f42b58e9b4dea6ce45886953",
+      "fileName": "./scripts/dev-check.ps1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "23323d1003b0ee63bfccd6bc2322fa9e9eba5603fa6c981c518844913347066c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1ac6b2f55ea4acba465137fc0f5bdef0c939f6dd",
+      "fileName": "./scripts/dev-check.sh",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4f0cda4955c0f36b7a20f7bbc19186e4ae62757f2226df987a398b038a799057"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6b9dfcd97b88204f91323247caca26700b969c26",
+      "fileName": "./scripts/generate_sbom.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8912b5c855b9567e8302b88cda82db24fc880a40c980c80c1b649ab0ba9edb27"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3fdc57937646eadbc56edaff5a08b176abc42e61",
+      "fileName": "./scripts/package_release.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "334423281651cbef7c588ebd378ac41c641fdcbae0558f84b6b1fd405898597e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8c0a87de5acdfb1d0d288807a30838392fa6b2f1",
+      "fileName": "./scripts/reproduce-research-foundation.sh",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d4162fc3af881614e105b2b5788b7dd9c36bae6c3690d666125a06916087e245"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-34be9c315071250c47d91b2bad5edfc1368eb859",
+      "fileName": "./scripts/run-demo.sh",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ad1ddbccaba7ab436c49519bef89808d887f63484fc4fa7f17581025910542ca"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-7bb68200e8d0aa14b3b64b2f047e469e90d1053d",
+      "fileName": "./scripts/run-research-demo.sh",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "17fc99778094e44387b196411472ae319920f1f65b84fe187af96b1557993d78"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-092e8620d45a9896c6ddaee48f79cce3a26ce40e",
+      "fileName": "./scripts/run-soak.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ef39f66cb8a4e3d02ce818ee8819aabd0722a5b58554f5bc39dc532addbfe960"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a6ae888c19fc45ab831ff56340edc765a7aa10a9",
+      "fileName": "./scripts/validate_research_bundle.py",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3466f1ad9839f628386f619b7cc46aedd5edc20f510cfb5555352fb91c3533e9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-72311db10a28fafe9bbd808f627fd51f2eb74cc5",
+      "fileName": "./src/VirtualSmartMotionCell.AdapterSdk/AdapterContracts.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5d3f0229df43c78ac579360d1ece2236898be58d186f5ddf6a3040934b2b969e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8cc19617c9a1f0634340d393ea4be67c69e25d62",
+      "fileName": "./src/VirtualSmartMotionCell.AdapterSdk/VirtualSmartMotionCell.AdapterSdk.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e12483c9ceaae3dac6cc8b0bb24a150b753258017e880a09b9ecbc9282753af1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c678d7bd8ff59bf34fadf19d9b61dc14184161d6",
+      "fileName": "./src/VirtualSmartMotionCell.Api/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0cce2c73a5bf064c5a2e1d2f350d6e3f5ffe96e7d79c60a29cbff3d5eee8f77e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d869d1c4976a6b404fd8c7d111449eec9628659e",
+      "fileName": "./src/VirtualSmartMotionCell.Api/VirtualSmartMotionCell.Api.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "74f888ea6af5e38115a95637c7dd71f8b09563966d39be825a3661c8934d485a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e61396aebbc5e416fe3d52f4183305eeabc9a6c1",
+      "fileName": "./src/VirtualSmartMotionCell.Api/WebSocketStatePublisher.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "654dcae762b8b9f165124e5a0b2d3850d91a22f4800530c18c5f0e823f0142af"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6620ee008659d1bf95a03001c03e524889e72407",
+      "fileName": "./src/VirtualSmartMotionCell.Api/appsettings.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7f93d3457a4ca17161884b6f053e1d039e4c5e82d8ee08b14ad112d43e359ae1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-29059c082fbe559d816472de055be03f16fa5d2d",
+      "fileName": "./src/VirtualSmartMotionCell.Application/IntegrationStatusStore.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4397d23e06655c7c67cdc32a8a46dba3843d93d0e66818cceac8ce3921e275a8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-438c71ad44d22bc65c5dd56fd3fb463207ffee3d",
+      "fileName": "./src/VirtualSmartMotionCell.Application/MachineCommandBus.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3c49ae9206754ac815faf8faea96e2051b69f0da4f1905e452b546467bf9563b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-63e59d3582a874a4045bc48487bc0360dce2a72e",
+      "fileName": "./src/VirtualSmartMotionCell.Application/MachineCoordinator.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7beb90a2a163fd2007d3218ab10b64920d8f082477991abb2ddbc8e8baaa78a8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-dc8191c14cdc7f7ed4a6e38fcd3d791c9d39964d",
+      "fileName": "./src/VirtualSmartMotionCell.Application/MachineStateStore.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f8ec2107b6cd87f4bb486144a76b43b23216b230799f971c2999912f4a66b701"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-cfcf3a45adbcd456bf637d10f45056140c92d337",
+      "fileName": "./src/VirtualSmartMotionCell.Application/MachineTelemetry.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3fa4bd97f20b59f9c62f6ca44b10bad75dfa6fcd3bf4e19ef5268cd7a0e86bde"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9eac03178bbd3878d09ade014a1a4d6e69211399",
+      "fileName": "./src/VirtualSmartMotionCell.Application/Ports.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "26cce62309bb815688aebda6d2a71b1af3a078f48f81e4b7c92328af42abcaf1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c39a36b6bd164c145dfd2f5c716d8a50c198a1b2",
+      "fileName": "./src/VirtualSmartMotionCell.Application/RuntimeMetrics.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "299cf22532fe81de97330b6ebc7ccbdfe464394dd51d8582f415524846e7e50b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-33a77b3283c294cd62cb4c823e06bc54056fb6df",
+      "fileName": "./src/VirtualSmartMotionCell.Application/VirtualSmartMotionCell.Application.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "67c9602d6ac5ff3a02c6171106c20ea63c3863ec2dd171c467b810d18f4fd43e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-17eddbb84fa34ea06929035a0cba109749268844",
+      "fileName": "./src/VirtualSmartMotionCell.Contracts/Commands.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0d019234e95b49018eb3b1bd64f726f414f2b112732ffb4b824a6daecc4cdf17"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5a567fe01b1e577463274bc4bf65ea97d9ed4184",
+      "fileName": "./src/VirtualSmartMotionCell.Contracts/Enums.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "50fd51cac79012d5ba207409b8e0690938ff77fe00af517e428bbf64549d5e1d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d242da3ce397e3ed3d97b88c5bbe1b62a0cd27ec",
+      "fileName": "./src/VirtualSmartMotionCell.Contracts/Snapshots.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8886595109df4480c4d4b677e5d68b5c992dff74a3a79feada6ab65535a62513"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1487728e2dd7d836c171f1d8f8de0b59c40334bd",
+      "fileName": "./src/VirtualSmartMotionCell.Contracts/VirtualSmartMotionCell.Contracts.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8d654c44b7bebb6b31a9f2f606927f45b5072193adc4eef8cce3f3cf3b278df3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6acf09ea43d35c603159ac66556c2bd3c4c8c99d",
+      "fileName": "./src/VirtualSmartMotionCell.Control/FaultInjectingMotionSystem.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "de5825471e8065ed3c0a32c1cac69c6266f1c5a073e4bf151adbfcd42ecf04e5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3dfe643acac98b11b7387902ca8a9360c650b721",
+      "fileName": "./src/VirtualSmartMotionCell.Control/PidController.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7288435135efc132755a81cea5b9a7919102be194f761eaca9079be2f25ad8d1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2fb15b060e319de65ec36af60ea6b7a335410839",
+      "fileName": "./src/VirtualSmartMotionCell.Control/ReplayMotionSystem.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fd421e98ed56dcf40ad289556b4585c1c6b30c55dc1bc58ff10082e879bf18ff"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-0c5b350857e34329805596ba5b371b09873af47e",
+      "fileName": "./src/VirtualSmartMotionCell.Control/SimulatedAxis.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "498ce06516f5e340259e11bc01e7bb946e05d3fd182fbd81c2c3cee783351ff7"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-759d2409d4d3c07a30d4945d93179d85d2d6f6eb",
+      "fileName": "./src/VirtualSmartMotionCell.Control/SimulatedInspectionAdapter.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ad73ed90e6ee11ea9c7b3edbeffc2f0670c7eb114db4c751779b0baabdb222c3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-4b1a04ff0ce0924e1e324791a78dfdf425e17def",
+      "fileName": "./src/VirtualSmartMotionCell.Control/SimulatedMotionSystem.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "bb3ba3d66ddb760a658b9e3ca21bd9fee2217f6b2d95ec09c234d08fd95ee520"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c9d0ca17d479144a4b3d62855037e5037eb6aa4c",
+      "fileName": "./src/VirtualSmartMotionCell.Control/VirtualSmartMotionCell.Control.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6f84e043b7a68ab8db2264f859b9d060f3c1147a55e223b15587e03c4ceb81ce"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6e28ead287b1a1e0927f9658f4b6fc1ed10ef056",
+      "fileName": "./src/VirtualSmartMotionCell.Domain/AlarmRecord.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "988a2ab566e0c04536235457e24b1dc1550f4b8475691c4f48665a73a7d882f8"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f66924acd8f9db6ccced2997746ed0327450289e",
+      "fileName": "./src/VirtualSmartMotionCell.Domain/MachineRecipe.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0ed4e915b0c0abf05400666054977bdaf2c29aa1cb24e1a9755b5641ae60dd13"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-980e9aa7571a569afa17c2a6cbc4d0745a9a9377",
+      "fileName": "./src/VirtualSmartMotionCell.Domain/ManufacturingModels.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2bf74b9126d08fc4dac13e6301615ba717effab665843d71fe96e491cc0daf39"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a6a38f4d15efd535ec83284ad769bef52ac62d14",
+      "fileName": "./src/VirtualSmartMotionCell.Domain/VirtualSmartMotionCell.Domain.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e12483c9ceaae3dac6cc8b0bb24a150b753258017e880a09b9ecbc9282753af1"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3064269d4959f72e45ed7692b48deacf51e47513",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/App.axaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "98f0df026f71d56ffc5bb394592e275e7c08c8a7d1a4432db1cfec227d50041b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-19b7a633b1f085aaeb0436d043409af30a6bbe1e",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/App.axaml.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d00abcceb2558f84697a9183f2c3a2ff70334a23196927ce641530861de40408"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-064ed3f67cc5e495aaaf9d465b332ebe0018a7ec",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/AsyncCommand.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "622bfa934007b417c6557c165e580ba1766b19ff52e4eb856850ec99315cd1fb"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1f96cc230a4a9c3b3c839c8211373740ca7a736a",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/MachineClient.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a3e897895141d1b6c5e530e451ef9ad8355b4de341c011ce13074d164341d80f"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e5563cb1a3c75e40b040deb236d5533993838ccc",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/MainWindow.axaml",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "80c55d46b6bb566773d7e72de54065af6505edc98b968a1dd1014c80f8464324"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5d3aa99efe8b0ba4b02449bc0d79b8ad8d63eff5",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/MainWindow.axaml.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "557d675fc06b43a49e26b70a508a0952b93c839fe03245a6fd9a3fd6794234f4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-bf676d98002fd813b6d9754987206c03bca77d00",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/MainWindowViewModel.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d548dc6dc1e9f141a8ff256c84068975cf85dc97896fddad67b20a720b032f5d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-85a92ddbbfac36ae1a4be6ed6588bc98a96bbd47",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "77676b2ba41cd57d10db0f27f80775601a6fafe39fe2aadcf0f295a68b5523ff"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-d783e1bad28c88c67fc53d36f13cf06aff5c7152",
+      "fileName": "./src/VirtualSmartMotionCell.Hmi/VirtualSmartMotionCell.Hmi.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4b13ab4a38410d7a454aa5e0bc2918a1b8ce79a7bf06de9eca01bf2b30a20ded"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f55363d5e317cb9013128652f8405101ae53eae2",
+      "fileName": "./src/VirtualSmartMotionCell.Infrastructure/FileStores.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f778b97b8c33f274ec8121b7f1e658727f7389dc4ea7ec50171c3d3dcc1bf1ce"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-1e54294ece5c8d1a3462f09f5b4f0cc8984a958e",
+      "fileName": "./src/VirtualSmartMotionCell.Infrastructure/JsonDefaults.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fced53af9149228dae3c4a0bb9b954c98f9b884cca89e1abad358629713ee218"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-6f82c646578d9cf5727a793a6ae91876a4f3e014",
+      "fileName": "./src/VirtualSmartMotionCell.Infrastructure/VirtualSmartMotionCell.Infrastructure.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "22535a811233cb9a4ce029943e1e68525929b8ac72fd251d06005357cc54834e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3744853cec40393815593d1dc754691b494cdf04",
+      "fileName": "./src/VirtualSmartMotionCell.OpcUa/MachineNodeManager.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e165c04224e2acad6a9185b3f9b7a41065f1cd289cbaa4d2ba9c348a13c2951d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9fd1dcf891d217c6312d52adc4b9a97aba1c2a83",
+      "fileName": "./src/VirtualSmartMotionCell.OpcUa/MachineOpcUaHostedService.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "af95d8eee8c4cdaa1e5f9df799372dc79d9149beb630c4902ad10e79e65ec9b0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-9f1925463924461b972ad0425d27798acaff26a0",
+      "fileName": "./src/VirtualSmartMotionCell.OpcUa/MachineOpcUaServer.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a3a7f5b21c891de69dc8e2f845ddaa1c2e475d9601bcc633eab8b288290e3d51"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2a1bb2b0f6c0aca247a3b89623871ed413dc2301",
+      "fileName": "./src/VirtualSmartMotionCell.OpcUa/OpcUaServiceCollectionExtensions.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "34010d3ca6ff3504781c1656eb77ba6c46364a19f4c5b02cba0b36eec5b0843e"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-574eeb5a6749706d7e7395f6c7a599ee29f96f0c",
+      "fileName": "./src/VirtualSmartMotionCell.OpcUa/VirtualSmartMotionCell.OpcUa.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "96fbfb195ec0ae706d42877597b040070927ff6da2a4a2610a7194e95adaa566"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-625b16ab885f2e013b421d1d093e8d1ae41f0da1",
+      "fileName": "./src/VirtualSmartMotionCell.Runtime/MachineRuntimeServices.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ddc6ad6e7c965972683f727c3fb51f22cf1382ce056cdea8eede7291a253806b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-450bae857ab4d939644ac21d78d8100a42742c04",
+      "fileName": "./src/VirtualSmartMotionCell.Runtime/RuntimeOptions.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9bb0ef68e82f222368f7be0739a94474db3d3fb9e0ed78e2bbc89b9b618f6c51"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e0e604398569f13f935ff06ddded404cfc87e2f3",
+      "fileName": "./src/VirtualSmartMotionCell.Runtime/ServiceCollectionExtensions.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "97c480046a369a91dd656217f560920b861bd9d3a8d75d4ee9818ff466faa52b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-296e5883b48da96e57602a6c35ade9a6a97663ff",
+      "fileName": "./src/VirtualSmartMotionCell.Runtime/StatePublicationQueue.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5898e079f7edf73132e8a81d641544967be6b347b0d242ee8513dde28c0ceada"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e5f56cba0249917fa1a3f2c5aff0f484e6f4142d",
+      "fileName": "./src/VirtualSmartMotionCell.Runtime/VirtualSmartMotionCell.Runtime.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "779fe76f5a9897d2caa280fbf6ff2f60bb9596eb40f81ca0a95547cc8f32776b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-8a2b652eabfda6becf1b5542ae143ec20baaf2c0",
+      "fileName": "./tests/VirtualSmartMotionCell.IntegrationSpecs/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "210ca14397900cf4d8b7b864be914fcc6985376dbd836b923fdb8dd9f2ea524d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b895f2303063147f46988a02b70b77a7cb196e8b",
+      "fileName": "./tests/VirtualSmartMotionCell.IntegrationSpecs/VirtualSmartMotionCell.IntegrationSpecs.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2778d98df21b3a8d8c14980ca1c5e6edeb9e971cc3c86bdc2ba92e63398346e3"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-18bc4fdc67f82d6e695671142ac145cb3037cbf2",
+      "fileName": "./tests/VirtualSmartMotionCell.Specs/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ad248461593b88ea0b496ffe866201efa8ee7403c8d376a3f92c32836ca723a0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-f7e87e712b799cbc17cb736049bd3d92e4af6659",
+      "fileName": "./tests/VirtualSmartMotionCell.Specs/VirtualSmartMotionCell.Specs.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "bb6046877d0c9b8781e5b30cc23f68eb507303b9771f4993614a738a2ac7ea78"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-23b7f35e1e7135db058d992c0bee21676ae2529e",
+      "fileName": "./tools/VirtualSmartMotionCell.MesSimulator/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1d0b672e7fd138d3e6d8bdac32f5aa74bfa42d74ce5e72a80da651eb12383fa4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5026ff4c5e2b57024b42756e4fd10690144dbf3f",
+      "fileName": "./tools/VirtualSmartMotionCell.MesSimulator/VirtualSmartMotionCell.MesSimulator.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "607893e7441c84baab15df6db172eb2a3624d09082dec4a53d63d58fad5058a5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a5511a767e78bc6aabb2ff46fd80ad33dafc5273",
+      "fileName": "./tools/VirtualSmartMotionCell.Reliability/Program.cs",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "55e314e43b82347ed4e4229a8b4e939c03bb52f43dd924e6373f7bbeea7d8873"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-3fb9da1baa66af137dcd798f6df7a2fc0d8a734f",
+      "fileName": "./tools/VirtualSmartMotionCell.Reliability/VirtualSmartMotionCell.Reliability.csproj",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6df8cd6c215334df10ad8352d54948c2b4615254eaccf0312315a764d2588448"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-2ca4ca9e2db38fdf23f8ad63ebc94551ea5bee33",
+      "fileName": "./web/viewer/app.js",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3f59c73fa8b08fab2f1ffd003fa1b72eee2009a3975d5ca256cf3d063494669d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-bb598948eccb29ab358788bb8947e92d4f25f8cc",
+      "fileName": "./web/viewer/dist/assets/index-BpuCcfds.js",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ea4b8996d0d00e00fb74f5d06d9cd257c6b5688e43f51660689c07136e3bc085"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-e18f5ad6687462471f5a8a40be544a0e90930b3f",
+      "fileName": "./web/viewer/dist/assets/index-CqeYrUw5.css",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "021389c757d0cb9e80a1a72b54ef1261fbea2fc294374a4d0df2ec0af52c9d11"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-a35a4a247177e1a2f6411d45d99df6bb1c72c61c",
+      "fileName": "./web/viewer/dist/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9aa06cedbb486a86972f7335c2ee0b53cb96cd8b7a20a8ee0cafcd7f1cd1b176"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-93f61df2162a07b50944e28d9ee4017865003edf",
+      "fileName": "./web/viewer/index.html",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c68fe6e0269fa648943068e6f848f45ebe48ee841649b6d8f8422015bf253849"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-b08da8498dc3978a8d63a0a3040a70a3733d679a",
+      "fileName": "./web/viewer/package-lock.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "17b0e04d97740f240c9507e4f8ed7b0cca678c9ab0353d671e42ab3a4bafa687"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-c831ff3a460f73f1e60aa1b3876abab701e58ddf",
+      "fileName": "./web/viewer/package.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f57ce85efce067ece18ea064fc46fcb9a2966ef2ffa93d213ee58d78667fa345"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-5e4e3102e3a567744713d6bd1bdeb92b82d17956",
+      "fileName": "./web/viewer/sample-replay.json",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "417c8dd2f1c73b5e1d8d6d47dfd3d57b2bfbd7bda572084feddcb3d3f40ba288"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-fbc7df64de2d8453c829267541b11a6109a071a9",
+      "fileName": "./web/viewer/styles.css",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cf460ab08edd200581331e2d748cd47e7c7572639e45ddd5dd220cc62ab80501"
+        }
+      ]
+    }
+  ]
+}

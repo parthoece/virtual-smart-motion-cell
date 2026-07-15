@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If this project helps your research, teaching, or engineering portfolio, cite it using this metadata."
+title: "Virtual Smart Motion Cell"
+type: software
+version: 0.5.0
+date-released: 2026-07-14
+license: Apache-2.0
+authors:
+  - family-names: "Maintainer"
+    given-names: "Project"
+repository-code: "https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell"
+url: "https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell"
+abstract: "A vendor-neutral, cross-platform equipment-software and dynamic machine-fault research benchmark for virtual commissioning, diagnostics, synchronized CPS data, reproducible datasets, and visual experiment operation."
+keywords:
+  - automation
+  - equipment software
+  - virtual commissioning
+  - motion control
+  - digital twin
+  - dotnet
+  - avalonia
+  - cyber-physical systems
+  - fault diagnosis
+  - predictive maintenance
+  - reproducible research
+  - parquet

@@ -1,0 +1,932 @@
+[
+  {
+    "revision": 1,
+    "timestamp": "2026-07-14T00:00:00Z",
+    "simulationTime": 0.0,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "MoveToPick",
+    "gripperClosed": false,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.064,
+      "actualPosition": 0.0,
+      "actualVelocity": 0.2,
+      "followingError": 0.064,
+      "targetPosition": 0.8,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.024,
+      "actualPosition": 0.0,
+      "actualVelocity": 0.2,
+      "followingError": 0.024,
+      "targetPosition": 0.3,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": false,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "MoveToPick",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 2,
+    "timestamp": "2026-07-14T00:00:01Z",
+    "simulationTime": 0.6,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "MoveToPick",
+    "gripperClosed": false,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.478,
+      "actualPosition": 0.45,
+      "actualVelocity": 0.2,
+      "followingError": 0.028,
+      "targetPosition": 0.8,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.1896,
+      "actualPosition": 0.18,
+      "actualVelocity": 0.2,
+      "followingError": 0.0096,
+      "targetPosition": 0.3,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": false,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "MoveToPick",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 3,
+    "timestamp": "2026-07-14T00:00:02Z",
+    "simulationTime": 1.2,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "Pick",
+    "gripperClosed": true,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.8,
+      "actualPosition": 0.8,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.8,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.3,
+      "actualPosition": 0.3,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.3,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": true,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "Pick",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 4,
+    "timestamp": "2026-07-14T00:00:03Z",
+    "simulationTime": 2.0,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "MoveToInspect",
+    "gripperClosed": true,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.43,
+      "actualPosition": 0.45,
+      "actualVelocity": 0.2,
+      "followingError": -0.02,
+      "targetPosition": 0.2,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.6056,
+      "actualPosition": 0.58,
+      "actualVelocity": 0.2,
+      "followingError": 0.0256,
+      "targetPosition": 0.9,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": true,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "MoveToInspect",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 5,
+    "timestamp": "2026-07-14T00:00:04Z",
+    "simulationTime": 2.8,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "Inspect",
+    "gripperClosed": true,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.2,
+      "actualPosition": 0.2,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.2,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.9,
+      "actualPosition": 0.9,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.9,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": true,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "Inspect",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 6,
+    "timestamp": "2026-07-14T00:00:05Z",
+    "simulationTime": 3.6,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "MoveToPlace",
+    "gripperClosed": true,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": -0.286,
+      "actualPosition": -0.25,
+      "actualVelocity": 0.2,
+      "followingError": -0.036,
+      "targetPosition": -0.7,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.7472,
+      "actualPosition": 0.76,
+      "actualVelocity": 0.2,
+      "followingError": -0.0128,
+      "targetPosition": 0.6,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": true,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "MoveToPlace",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 7,
+    "timestamp": "2026-07-14T00:00:06Z",
+    "simulationTime": 4.4,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "Place",
+    "gripperClosed": false,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": -0.7,
+      "actualPosition": -0.7,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": -0.7,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.6,
+      "actualPosition": 0.6,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.6,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": false,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "Place",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 8,
+    "timestamp": "2026-07-14T00:00:07Z",
+    "simulationTime": 5.2,
+    "mode": "Automatic",
+    "executionState": "Running",
+    "productionStep": "ReturnHome",
+    "gripperClosed": false,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": -0.2944,
+      "actualPosition": -0.32,
+      "actualVelocity": 0.2,
+      "followingError": 0.0256,
+      "targetPosition": 0.0,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.2576,
+      "actualPosition": 0.28,
+      "actualVelocity": 0.2,
+      "followingError": -0.0224,
+      "targetPosition": 0.0,
+      "enabled": true,
+      "homed": true,
+      "moving": true,
+      "faulted": false,
+      "motionState": "Moving"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": {
+      "partId": "ORDER-DEMO-001-PART-000001",
+      "attachedToGripper": false,
+      "quality": "Unknown",
+      "recipeId": "standard-widget",
+      "recipeRevision": 1
+    },
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 0,
+      "goodCount": 0,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 0,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Active",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": null
+      },
+      "activePartId": "ORDER-DEMO-001-PART-000001",
+      "lastCycleSeconds": 0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": null,
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "ReturnHome",
+    "correlationId": "recorded-demo"
+  },
+  {
+    "revision": 9,
+    "timestamp": "2026-07-14T00:00:08Z",
+    "simulationTime": 6.0,
+    "mode": "Automatic",
+    "executionState": "Ready",
+    "productionStep": "Complete",
+    "gripperClosed": false,
+    "xAxis": {
+      "name": "X",
+      "commandPosition": 0.0,
+      "actualPosition": 0.0,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.0,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "yAxis": {
+      "name": "Y",
+      "commandPosition": 0.0,
+      "actualPosition": 0.0,
+      "actualVelocity": 0.0,
+      "followingError": 0.0,
+      "targetPosition": 0.0,
+      "enabled": true,
+      "homed": true,
+      "moving": false,
+      "faulted": false,
+      "motionState": "Holding"
+    },
+    "interlocks": {
+      "emergencyStopOk": true,
+      "guardClosed": true,
+      "busHealthy": true,
+      "drivesHealthy": true,
+      "motionPermitted": true,
+      "blockingReasons": []
+    },
+    "activePart": null,
+    "activeAlarms": [],
+    "production": {
+      "cycleCount": 1,
+      "goodCount": 1,
+      "rejectCount": 0,
+      "activeOrder": {
+        "orderId": "ORDER-DEMO-001",
+        "targetQuantity": 1,
+        "completedQuantity": 1,
+        "recipeId": "standard-widget",
+        "recipeRevision": 1,
+        "status": "Completed",
+        "loadedAt": "2026-07-14T00:00:00Z",
+        "completedAt": "2026-07-14T00:00:08Z"
+      },
+      "activePartId": null,
+      "lastCycleSeconds": 6.0,
+      "availability": 0.98,
+      "performance": 0.91,
+      "quality": 1.0,
+      "oee": 0.8918
+    },
+    "runtime": {
+      "loopPeriodMilliseconds": 10,
+      "lastLoopDurationMilliseconds": 0.22,
+      "maximumLoopDurationMilliseconds": 0.81,
+      "deadlineMissCount": 0,
+      "commandQueueDepth": 0,
+      "connectedClients": 1,
+      "startedAt": "2026-07-14T00:00:00Z",
+      "uptime": "00:00:10"
+    },
+    "activeRecipe": {
+      "recipeId": "standard-widget",
+      "revision": 1,
+      "schemaVersion": 1,
+      "lifecycle": "Active",
+      "checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "integration": {
+      "mesHealth": "Healthy",
+      "mesStatus": "simulated MES connected",
+      "outboxPending": 0,
+      "lastSuccessfulDelivery": "2026-07-14T00:00:08Z",
+      "opcUaEndpoint": "opc.tcp://localhost:4840/vsmc",
+      "opcUaEnabled": true
+    },
+    "recovery": {
+      "required": false,
+      "reason": "",
+      "allowedActions": []
+    },
+    "lastTransition": "Complete",
+    "correlationId": "recorded-demo"
+  }
+]

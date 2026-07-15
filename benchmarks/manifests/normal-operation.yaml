@@ -1,0 +1,58 @@
+schema_version: 1
+experiment_id: dynamic-gantry-normal
+name: "Dynamic gantry \u2014 normal operation"
+description: Dynamic orders, product variation, queues, changeovers, and maintenance
+  without injected faults.
+base_seed: 20260714
+episodes: 10
+execution:
+  mode: accelerated
+environment:
+  id: VSMC-DynamicGantry-v1
+  duration_s: 45
+  dt_ms: 20
+production:
+  mean_arrival_interval_s: 0.75
+  input_buffer_capacity: 12
+  maintenance_interval_s: 36
+  maintenance_duration_s: 2
+  products:
+  - id: P1
+    payload_kg: 0.8
+    inspect_s: 0.32
+    changeover_s: 0.7
+  - id: P2
+    payload_kg: 1.7
+    inspect_s: 0.52
+    changeover_s: 1.0
+  orders:
+  - id: ORDER-P2-RUSH
+    product_id: P2
+    quantity: 10
+    priority: 2
+    due_time_s: 40
+  - id: ORDER-P1
+    product_id: P1
+    quantity: 20
+    priority: 1
+    due_time_s: 80
+network:
+  base_delay_ms: 1.2
+  base_jitter_ms: 0.2
+  base_loss_probability: 0
+  base_duplicate_probability: 0
+  protocol: ethercat
+  cycle_period_ms: 20
+  logical_address: 4096
+  cia402_mode: cyclic_synchronous_position
+  slave_count: 2
+scenarios: []
+capture:
+  profile: research_full
+  formats:
+  - parquet
+  - csv
+  - pcapng
+  - jsonl
+datasets:
+  window_s: 1.0

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "recipeId": "standard-widget",
+  "revision": 1,
+  "status": "approved",
+  "pick": { "x": 0.8, "y": 0.3 },
+  "inspect": { "x": 0.2, "y": 0.9 },
+  "place": { "x": -0.7, "y": 0.6 },
+  "home": { "x": 0.0, "y": 0.0 },
+  "motion": {
+    "maximumVelocity": 0.55,
+    "maximumAcceleration": 1.4,
+    "followingErrorLimit": 0.35
+  },
+  "pickDwellSeconds": 0.35,
+  "inspectDwellSeconds": 0.45,
+  "placeDwellSeconds": 0.35
+}

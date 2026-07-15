@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup><AssemblyName>vsmc-mes-simulator</AssemblyName></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/VirtualSmartMotionCell.Contracts/VirtualSmartMotionCell.Contracts.csproj" /></ItemGroup>
+</Project>

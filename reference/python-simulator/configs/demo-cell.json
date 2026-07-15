@@ -1,0 +1,48 @@
+{
+  "cycle_time_seconds": 0.01,
+  "sample_every_ticks": 5,
+  "max_simulation_seconds": 120.0,
+  "axes": [
+    {
+      "name": "X",
+      "mass": 1.0,
+      "damping": 3.2,
+      "kp": 48.0,
+      "ki": 7.0,
+      "kd": 8.0,
+      "command_limit": 30.0,
+      "max_velocity": 1.2,
+      "max_acceleration": 3.5,
+      "soft_min": -1.2,
+      "soft_max": 1.2,
+      "position_tolerance": 0.012,
+      "velocity_tolerance": 0.025,
+      "following_error_limit": 0.35
+    },
+    {
+      "name": "Y",
+      "mass": 1.2,
+      "damping": 3.5,
+      "kp": 52.0,
+      "ki": 7.5,
+      "kd": 9.0,
+      "command_limit": 32.0,
+      "max_velocity": 1.1,
+      "max_acceleration": 3.2,
+      "soft_min": -0.2,
+      "soft_max": 1.2,
+      "position_tolerance": 0.012,
+      "velocity_tolerance": 0.025,
+      "following_error_limit": 0.35
+    }
+  ],
+  "recipe": {
+    "version": "demo-v1",
+    "home": [0.0, 0.0],
+    "pick": [0.8, 0.3],
+    "inspect": [0.2, 0.9],
+    "place": [-0.7, 0.6],
+    "dwell_seconds": 0.12,
+    "ideal_cycle_seconds": 20.0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "primary_domain": "machine",
+  "domains": {
+    "machine": ["mechanical", "actuator_drive", "sensor_feedback", "motion_control", "process_tooling", "safety_interlock", "electrical_power", "software_sequence"],
+    "network": ["timing", "availability", "integrity", "protocol", "service"],
+    "cyber_influenced": ["command_manipulation", "telemetry_manipulation", "parameter_manipulation", "loss_of_view", "loss_of_control", "service_disruption"]
+  },
+  "phases": ["inactive", "incipient", "onset", "active", "propagating", "detected", "mitigating", "recovering", "cleared"],
+  "progressions": ["abrupt", "intermittent", "gradual", "periodic", "load_dependent", "state_dependent", "cascading", "permanent", "self_clearing"]
+}

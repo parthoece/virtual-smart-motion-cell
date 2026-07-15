@@ -1,0 +1,27 @@
+name: Bug report
+description: Report reproducible incorrect behavior
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report security vulnerabilities publicly.
+  - type: input
+    id: version
+    attributes: { label: Version or commit, placeholder: v0.5.0 }
+    validations: { required: true }
+  - type: dropdown
+    id: platform
+    attributes: { label: Platform, options: [Windows x64, Windows ARM64, Linux x64, Linux ARM64, macOS x64, macOS ARM64, Browser-only, Other] }
+    validations: { required: true }
+  - type: textarea
+    id: reproduce
+    attributes: { label: Reproduction, description: Include commands, configuration, and fault scenario. }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: Expected behavior }
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes: { label: Logs and evidence, description: Remove secrets and proprietary information. }

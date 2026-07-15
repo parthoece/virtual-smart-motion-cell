@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../VirtualSmartMotionCell.Contracts/VirtualSmartMotionCell.Contracts.csproj" /></ItemGroup></Project>

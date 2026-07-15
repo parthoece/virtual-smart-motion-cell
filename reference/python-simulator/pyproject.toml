@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "virtual-smart-motion-cell"
+version = "0.1.0"
+description = "A simulated two-axis smart manufacturing cell for controls, motion, diagnostics, and industrial software portfolios"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{ name = "Virtual Smart Motion Cell contributors" }]
+keywords = [
+  "automatic-control",
+  "motion-control",
+  "industrial-automation",
+  "smart-manufacturing",
+  "digital-twin",
+  "simulation",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.115", "uvicorn>=0.30"]
+dev = [
+  "build>=1.2",
+  "fastapi>=0.115",
+  "httpx>=0.27",
+  "pytest>=8.3",
+  "pyyaml>=6.0",
+  "ruff>=0.9",
+  "twine>=6.0",
+  "uvicorn>=0.30",
+]
+
+[project.scripts]
+smc = "smart_motion_cell.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"smart_motion_cell.web" = ["*.html"]
+"smart_motion_cell.resources" = ["*.json"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = ["artifacts", "docs/assets/sample-run"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

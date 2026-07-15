@@ -1,0 +1,28 @@
+name: Adapter proposal
+description: Propose a vendor, protocol, sensor, or manufacturing adapter
+title: "[Adapter]: "
+labels: ["adapter", "proposal"]
+body:
+  - type: input
+    id: name
+    attributes: { label: Adapter name }
+    validations: { required: true }
+  - type: textarea
+    id: boundary
+    attributes: { label: External system and boundary, description: Describe protocol, SDK, licensing, and target platforms. }
+    validations: { required: true }
+  - type: textarea
+    id: failure
+    attributes: { label: Failure and reconnect behavior }
+    validations: { required: true }
+  - type: checkboxes
+    id: commitments
+    attributes:
+      label: Contributor commitments
+      options:
+        - label: I will include a deterministic fake or simulator.
+          required: true
+        - label: I will document licensing and redistribution restrictions.
+          required: true
+        - label: I will not claim functional-safety certification.
+          required: true

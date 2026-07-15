@@ -1,0 +1,61 @@
+diff --git a/tests/VirtualSmartMotionCell.IntegrationSpecs/Program.cs b/tests/VirtualSmartMotionCell.IntegrationSpecs/Program.cs
+--- a/tests/VirtualSmartMotionCell.IntegrationSpecs/Program.cs
++++ b/tests/VirtualSmartMotionCell.IntegrationSpecs/Program.cs
+@@ -3,6 +3,7 @@ using System.Text;
+ using System.Text.Json;
+ using VirtualSmartMotionCell.Application;
+ using VirtualSmartMotionCell.Contracts;
++using VirtualSmartMotionCell.Control;
+ using VirtualSmartMotionCell.Domain;
+ using VirtualSmartMotionCell.Infrastructure;
+ using VirtualSmartMotionCell.Runtime;
+@@ -13,7 +14,7 @@ var tests = new List<(string Name, Func<Task> Test)>
+     ("Outbox is durable and idempotent", OutboxRoundTrip),
+     ("File MES delivery is idempotent", FileMesIdempotency),
+     ("HTTP MES delivery sends idempotency key", HttpMesIdempotency),
+-    ("Recipe draft approval activation lifecycle", RecipeLifecycle),
++    ("Recipe draft approval activation lifecycle", RecipeLifecycleSpec),
+     ("Production repository materializes records", ProductionMaterialization),
+     ("Alarm history persists lifecycle", AlarmHistory),
+     ("Architecture project references follow boundaries", ArchitectureBoundaries),
+@@ -82,7 +83,7 @@ static async Task HttpMesIdempotency()
+         "The delivery envelope must include the event ID.");
+ }
+ 
+-static async Task RecipeLifecycle()
++static async Task RecipeLifecycleSpec()
+ {
+     using var temp = TempDirectory.Create();
+     var initialPath = System.IO.Path.Combine(temp.Path, "standard-widget.v1.json");
+diff --git a/src/VirtualSmartMotionCell.OpcUa/MachineOpcUaHostedService.cs b/src/VirtualSmartMotionCell.OpcUa/MachineOpcUaHostedService.cs
+--- a/src/VirtualSmartMotionCell.OpcUa/MachineOpcUaHostedService.cs
++++ b/src/VirtualSmartMotionCell.OpcUa/MachineOpcUaHostedService.cs
+@@ -31,11 +31,14 @@ public sealed class MachineOpcUaHostedService(
+             ApplicationConfiguration = configuration
+         };
+ 
+-        var certificateValid = await application.CheckApplicationInstanceCertificate(false, 2048).ConfigureAwait(false);
++        var certificateValid = await application.CheckApplicationInstanceCertificatesAsync(
++            silent: false,
++            lifeTimeInMonths: null,
++            ct: stoppingToken).ConfigureAwait(false);
+         if (!certificateValid) throw new InvalidOperationException("The OPC UA application certificate could not be created or validated.");
+ 
+         _server = new MachineOpcUaServer(stateStore);
+-        await application.Start(_server).ConfigureAwait(false);
++        await application.StartAsync(_server).ConfigureAwait(false);
+         logger.LogInformation("OPC UA simulation server listening at {Endpoint}", options.Value.Endpoint);
+ 
+         try { await Task.Delay(Timeout.InfiniteTimeSpan, stoppingToken).ConfigureAwait(false); }
+@@ -95,7 +98,10 @@ public sealed class MachineOpcUaHostedService(
+             CertificateValidator = new CertificateValidator()
+         };
+         await configuration.Validate(ApplicationType.Server).ConfigureAwait(false);
+-        await configuration.CertificateValidator.Update(configuration.SecurityConfiguration).ConfigureAwait(false);
++        await configuration.CertificateValidator.UpdateAsync(
++            configuration.SecurityConfiguration,
++            applicationUri: null,
++            ct: cancellationToken).ConfigureAwait(false);
+         return configuration;
+     }
+ }

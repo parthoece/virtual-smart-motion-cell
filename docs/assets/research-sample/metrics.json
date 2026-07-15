@@ -1,0 +1,29 @@
+{
+  "experiment_id": "dynamic-gantry-machine-fault",
+  "episodes": 10,
+  "steps": 27500,
+  "telemetry_rows": 27500,
+  "network_messages": 27500,
+  "captured_packets": 55000,
+  "ethercat_pdo_rows": 55000,
+  "ethercat_protocol": "EtherCAT LRW / CiA 402-style PDO mapping",
+  "production_events": 620,
+  "ground_truth_intervals": 20,
+  "dataset_windows": 550,
+  "completed_cycles": 30,
+  "good_parts": 10,
+  "rejected_parts": 20,
+  "max_following_error": 1.412847311078936,
+  "condition_counts": {
+    "machine_fault": 320,
+    "normal": 230
+  },
+  "dataset_split_counts": {
+    "train": 385,
+    "validation": 110,
+    "test": 55
+  },
+  "transition_hash": "74dc1c7074ef24d9f7b516eaad96b1ca375c8f363df62e79feb315f94353c7b1",
+  "elapsed_wall_s": 5.2235,
+  "manifest_sha256": "c240387315e560dffe8d19fa220b50558e9430d33a9751ce63c2b43085782829"
+}

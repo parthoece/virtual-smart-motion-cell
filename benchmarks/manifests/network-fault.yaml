@@ -1,0 +1,59 @@
+schema_version: 1
+experiment_id: dynamic-gantry-network-fault
+name: "Dynamic gantry \u2014 network timing fault"
+description: Secondary benchmark for distinguishing delayed state traffic from machine
+  faults.
+base_seed: 20260714
+episodes: 10
+execution:
+  mode: accelerated
+environment:
+  id: VSMC-DynamicGantry-v1
+  duration_s: 45
+  dt_ms: 20
+production:
+  mean_arrival_interval_s: 0.75
+  input_buffer_capacity: 12
+  maintenance_interval_s: 1000
+  products:
+  - id: P1
+    payload_kg: 1.0
+    inspect_s: 0.35
+  - id: P2
+    payload_kg: 1.8
+    inspect_s: 0.5
+  orders:
+  - id: ORDER-P1
+    product_id: P1
+    quantity: 20
+    priority: 1
+network:
+  base_delay_ms: 1.0
+  base_jitter_ms: 0.2
+  base_loss_probability: 0
+  base_duplicate_probability: 0
+  protocol: ethercat
+  cycle_period_ms: 20
+  logical_address: 4096
+  cia402_mode: cyclic_synchronous_position
+  slave_count: 2
+scenarios:
+- id: NF-TIMING-DELAY-001
+  domain: network
+  category: timing
+  type: message_delay
+  component: state_channel
+  activation_time_s: 16
+  duration_s: 16
+  progression: abrupt
+  magnitude: 50
+  severity: minor
+capture:
+  profile: research_full
+  formats:
+  - parquet
+  - csv
+  - pcapng
+  - jsonl
+datasets:
+  window_s: 1.0

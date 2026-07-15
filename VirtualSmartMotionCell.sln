@@ -1,0 +1,102 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Contracts", "src/VirtualSmartMotionCell.Contracts/VirtualSmartMotionCell.Contracts.csproj", "{00000001-0000-4000-8000-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Domain", "src/VirtualSmartMotionCell.Domain/VirtualSmartMotionCell.Domain.csproj", "{00000002-0000-4000-8000-000000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.AdapterSdk", "src/VirtualSmartMotionCell.AdapterSdk/VirtualSmartMotionCell.AdapterSdk.csproj", "{00000003-0000-4000-8000-000000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Control", "src/VirtualSmartMotionCell.Control/VirtualSmartMotionCell.Control.csproj", "{00000004-0000-4000-8000-000000000004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Application", "src/VirtualSmartMotionCell.Application/VirtualSmartMotionCell.Application.csproj", "{00000005-0000-4000-8000-000000000005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Infrastructure", "src/VirtualSmartMotionCell.Infrastructure/VirtualSmartMotionCell.Infrastructure.csproj", "{00000006-0000-4000-8000-000000000006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Runtime", "src/VirtualSmartMotionCell.Runtime/VirtualSmartMotionCell.Runtime.csproj", "{00000007-0000-4000-8000-000000000007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.OpcUa", "src/VirtualSmartMotionCell.OpcUa/VirtualSmartMotionCell.OpcUa.csproj", "{00000008-0000-4000-8000-000000000008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Api", "src/VirtualSmartMotionCell.Api/VirtualSmartMotionCell.Api.csproj", "{00000009-0000-4000-8000-000000000009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Hmi", "src/VirtualSmartMotionCell.Hmi/VirtualSmartMotionCell.Hmi.csproj", "{0000000A-0000-4000-8000-00000000000A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.SampleAdapter", "examples/VirtualSmartMotionCell.SampleAdapter/VirtualSmartMotionCell.SampleAdapter.csproj", "{0000000B-0000-4000-8000-00000000000B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Specs", "tests/VirtualSmartMotionCell.Specs/VirtualSmartMotionCell.Specs.csproj", "{0000000C-0000-4000-8000-00000000000C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.IntegrationSpecs", "tests/VirtualSmartMotionCell.IntegrationSpecs/VirtualSmartMotionCell.IntegrationSpecs.csproj", "{0000000D-0000-4000-8000-00000000000D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.Reliability", "tools/VirtualSmartMotionCell.Reliability/VirtualSmartMotionCell.Reliability.csproj", "{0000000E-0000-4000-8000-00000000000E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSmartMotionCell.MesSimulator", "tools/VirtualSmartMotionCell.MesSimulator/VirtualSmartMotionCell.MesSimulator.csproj", "{0000000F-0000-4000-8000-00000000000F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00000001-0000-4000-8000-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000001-0000-4000-8000-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000001-0000-4000-8000-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000001-0000-4000-8000-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000002-0000-4000-8000-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000002-0000-4000-8000-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000002-0000-4000-8000-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000002-0000-4000-8000-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000003-0000-4000-8000-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000003-0000-4000-8000-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000003-0000-4000-8000-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000003-0000-4000-8000-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000004-0000-4000-8000-000000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000004-0000-4000-8000-000000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000004-0000-4000-8000-000000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000004-0000-4000-8000-000000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000005-0000-4000-8000-000000000005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000005-0000-4000-8000-000000000005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000005-0000-4000-8000-000000000005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000005-0000-4000-8000-000000000005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000006-0000-4000-8000-000000000006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000006-0000-4000-8000-000000000006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000006-0000-4000-8000-000000000006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000006-0000-4000-8000-000000000006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000007-0000-4000-8000-000000000007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000007-0000-4000-8000-000000000007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000007-0000-4000-8000-000000000007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000007-0000-4000-8000-000000000007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000008-0000-4000-8000-000000000008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000008-0000-4000-8000-000000000008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000008-0000-4000-8000-000000000008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000008-0000-4000-8000-000000000008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00000009-0000-4000-8000-000000000009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000009-0000-4000-8000-000000000009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000009-0000-4000-8000-000000000009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000009-0000-4000-8000-000000000009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0000000A-0000-4000-8000-00000000000A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0000000A-0000-4000-8000-00000000000A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0000000A-0000-4000-8000-00000000000A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0000000A-0000-4000-8000-00000000000A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0000000B-0000-4000-8000-00000000000B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0000000B-0000-4000-8000-00000000000B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0000000B-0000-4000-8000-00000000000B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0000000B-0000-4000-8000-00000000000B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0000000C-0000-4000-8000-00000000000C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0000000C-0000-4000-8000-00000000000C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0000000C-0000-4000-8000-00000000000C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0000000C-0000-4000-8000-00000000000C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0000000D-0000-4000-8000-00000000000D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0000000D-0000-4000-8000-00000000000D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0000000D-0000-4000-8000-00000000000D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0000000D-0000-4000-8000-00000000000D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0000000E-0000-4000-8000-00000000000E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0000000E-0000-4000-8000-00000000000E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0000000E-0000-4000-8000-00000000000E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0000000E-0000-4000-8000-00000000000E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0000000F-0000-4000-8000-00000000000F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0000000F-0000-4000-8000-00000000000F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0000000F-0000-4000-8000-00000000000F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0000000F-0000-4000-8000-00000000000F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

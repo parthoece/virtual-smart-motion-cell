@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual Smart Motion Cell</title>
+  <style>
+    :root { color-scheme: light dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    body { margin: 0; background: #0b1220; color: #e5e7eb; }
+    main { max-width: 1050px; margin: auto; padding: 42px 20px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.7rem); margin: 0; line-height: 1; }
+    .sub { color: #94a3b8; max-width: 760px; font-size: 1.05rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 28px 0; }
+    .card, section { background: #111b2e; border: 1px solid #23314b; border-radius: 16px; padding: 20px; }
+    .metric { font-size: 2rem; font-weight: 800; } .label { color: #94a3b8; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
+    table { width: 100%; border-collapse: collapse; } th, td { text-align: left; padding: 10px; border-bottom: 1px solid #23314b; } th { color: #94a3b8; }
+    .pill { display: inline-block; background: #12335d; color: #93c5fd; border-radius: 999px; padding: 5px 10px; font-weight: 700; }
+    section { margin-top: 16px; overflow-x: auto; }
+  </style>
+</head>
+<body><main>
+  <span class="pill">simulation dashboard</span>
+  <h1>Virtual Smart Motion Cell</h1>
+  <p class="sub">A two-axis pick–inspect–place cell combining closed-loop control, motion sequencing, diagnostics, traceability, production metrics, and a small manufacturing API.</p>
+  <div class="grid">
+    <div class="card"><div class="label">Run status</div><div class="metric" id="run-status">—</div></div>
+    <div class="card"><div class="label">Cell state</div><div class="metric" id="cell-state">—</div></div>
+    <div class="card"><div class="label">Cycles</div><div class="metric" id="cycle-count">—</div></div>
+    <div class="card"><div class="label">OEE</div><div class="metric" id="oee">—</div></div>
+  </div>
+  <section><h2>Recent traceability records</h2><table><thead><tr><th>Cycle</th><th>Part</th><th>Result</th><th>Recipe</th></tr></thead><tbody id="cycles"></tbody></table></section>
+  <section><h2>Recent events</h2><table><thead><tr><th>Time</th><th>Severity</th><th>Type</th><th>Message</th></tr></thead><tbody id="events"></tbody></table></section>
+</main>
+<script>
+const text = (id, value) => document.getElementById(id).textContent = value;
+const rows = (id, data, render) => document.getElementById(id).innerHTML = data.map(render).join('');
+async function refresh() {
+  const [status, cycles, events, oee] = await Promise.all([
+    fetch('/api/status').then(r => r.json()), fetch('/api/cycles?limit=8').then(r => r.json()),
+    fetch('/api/events?limit=12').then(r => r.json()), fetch('/api/metrics/oee').then(r => r.json())
+  ]);
+  text('run-status', status.run_status ?? '—'); text('cell-state', status.cell_state ?? '—');
+  text('cycle-count', cycles.length); text('oee', `${((oee.oee ?? 0) * 100).toFixed(1)}%`);
+  rows('cycles', cycles, c => `<tr><td>${c.cycle_number}</td><td>${c.part_id}</td><td>${c.result}</td><td>${c.recipe_version}</td></tr>`);
+  rows('events', events, e => `<tr><td>${Number(e.sim_time).toFixed(3)}</td><td>${e.severity}</td><td>${e.event_type}</td><td>${e.message}</td></tr>`);
+}
+refresh().catch(err => { text('run-status', 'no data'); console.error(err); });
+</script></body></html>

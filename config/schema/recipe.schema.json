@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://virtual-smart-motion-cell.dev/schema/recipe.schema.json",
+  "title": "Virtual Smart Motion Cell Recipe",
+  "type": "object",
+  "required": ["schemaVersion", "recipeId", "revision", "status", "pick", "inspect", "place", "home", "motion", "pickDwellSeconds", "inspectDwellSeconds", "placeDwellSeconds"],
+  "$defs": {
+    "position": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number", "minimum": -1.0, "maximum": 1.0 },
+        "y": { "type": "number", "minimum": 0.0, "maximum": 1.2 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "recipeId": { "type": "string", "minLength": 1, "maxLength": 80, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "status": { "enum": ["draft", "approved", "active", "retired"] },
+    "pick": { "$ref": "#/$defs/position" },
+    "inspect": { "$ref": "#/$defs/position" },
+    "place": { "$ref": "#/$defs/position" },
+    "home": { "$ref": "#/$defs/position" },
+    "motion": {
+      "type": "object",
+      "required": ["maximumVelocity", "maximumAcceleration", "followingErrorLimit"],
+      "properties": {
+        "maximumVelocity": { "type": "number", "exclusiveMinimum": 0, "maximum": 2 },
+        "maximumAcceleration": { "type": "number", "exclusiveMinimum": 0, "maximum": 5 },
+        "followingErrorLimit": { "type": "number", "exclusiveMinimum": 0, "maximum": 2 }
+      },
+      "additionalProperties": false
+    },
+    "pickDwellSeconds": { "type": "number", "minimum": 0, "maximum": 30 },
+    "inspectDwellSeconds": { "type": "number", "minimum": 0, "maximum": 30 },
+    "placeDwellSeconds": { "type": "number", "minimum": 0, "maximum": 30 }
+  },
+  "additionalProperties": false
+}

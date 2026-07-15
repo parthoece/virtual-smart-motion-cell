@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+<title id="title">Virtual Smart Motion Cell</title><desc id="desc">Cross-platform machine runtime, operator HMI, browser digital twin and manufacturing data architecture.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07101b"/><stop offset="1" stop-color="#172a3d"/></linearGradient><linearGradient id="blue"><stop stop-color="#43a6e8"/><stop offset="1" stop-color="#245b93"/></linearGradient></defs>
+<rect width="1400" height="700" rx="28" fill="url(#bg)"/><g fill="none" stroke="#4b6b86" stroke-width="8"><path d="M150 160h680v360H150z"/><path d="M190 205h600M190 475h600"/><path d="M260 205v270M720 205v270"/></g>
+<g><rect x="300" y="250" width="430" height="42" rx="8" fill="#7f96a8"/><rect x="520" y="270" width="48" height="190" rx="8" fill="url(#blue)"/><rect x="478" y="430" width="132" height="70" rx="12" fill="#25a87d"/><path d="M510 495v55m65-55v55" stroke="#f4b844" stroke-width="18"/></g>
+<g font-family="Inter,Arial,sans-serif"><text x="890" y="180" fill="#e8f2f9" font-size="56" font-weight="800">VIRTUAL SMART</text><text x="890" y="245" fill="#e8f2f9" font-size="56" font-weight="800">MOTION CELL</text><text x="892" y="300" fill="#8fb0c9" font-size="24">Vendor-neutral equipment software reference architecture</text>
+<g font-size="22" fill="#d3e3ee"><text x="890" y="370">● Cross-platform .NET runtime</text><text x="890" y="415">● Avalonia operator HMI</text><text x="890" y="460">● Live browser Three.js digital twin</text><text x="890" y="505">● Recovery, diagnostics, traceability</text><text x="890" y="550">● Contributor-friendly adapter SDK</text></g></g>
+</svg>

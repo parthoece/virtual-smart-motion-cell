@@ -1,0 +1,25 @@
+services:
+  mes-simulator:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.mes
+    ports:
+      - "8090:8090"
+  machine-runtime:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - mes-simulator
+    ports:
+      - "8080:8080"
+      - "4840:4840"
+    environment:
+      VSMC_DATA_DIR: /data
+      VSMC_Mes__BaseUrl: http://mes-simulator:8090/
+      VSMC_OpcUa__Endpoint: opc.tcp://0.0.0.0:4840/vsmc
+    volumes:
+      - vsmc-data:/data
+
+volumes:
+  vsmc-data:

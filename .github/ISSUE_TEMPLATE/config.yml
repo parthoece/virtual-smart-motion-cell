@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and architecture discussion
+    url: https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/discussions
+    about: Use Discussions for support and open-ended design topics.
+  - name: Security report
+    url: https://github.com/YOUR_GITHUB_HANDLE/virtual-smart-motion-cell/security/advisories/new
+    about: Report suspected vulnerabilities privately.

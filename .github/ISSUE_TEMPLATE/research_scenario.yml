@@ -1,0 +1,42 @@
+name: Research scenario proposal
+description: Propose a machine fault, dynamic environment condition, dataset view, or benchmark task.
+title: "[Research]: "
+labels: [research, proposal]
+body:
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Research domain
+      options:
+        - Machine fault
+        - Dynamic production
+        - Multimodal data
+        - Network fault
+        - Model deployment
+        - Controlled cyber resilience
+        - Honeypot/deception
+    validations: { required: true }
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State the falsifiable question or hypothesis.
+    validations: { required: true }
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Proposed environment or scenario effect
+      description: Explain what model changes and which observable symptoms should emerge.
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Metrics, labels, and reproducibility evidence
+    validations: { required: true }
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: The proposal does not require external targeting, real machine control, or arbitrary exploit execution.
+          required: true
