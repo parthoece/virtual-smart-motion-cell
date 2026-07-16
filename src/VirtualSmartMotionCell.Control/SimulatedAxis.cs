@@ -99,7 +99,29 @@ public sealed class SimulatedAxis
         if (ForceFollowingError) effort *= 0.02;
         var acceleration = effort - 4.0 * ActualVelocity;
         ActualVelocity += acceleration * dt;
-        ActualPosition = Math.Clamp(ActualPosition + ActualVelocity * dt, Minimum, Maximum);
+
+        var nextPosition = ActualPosition + ActualVelocity * dt;
+        var clampedPosition = Math.Clamp(nextPosition, Minimum, Maximum);
+
+        var hitLowerLimit =
+            clampedPosition <= Minimum && ActualVelocity < 0;
+
+        var hitUpperLimit =
+            clampedPosition >= Maximum && ActualVelocity > 0;
+
+        ActualPosition = clampedPosition;
+
+        if (hitLowerLimit || hitUpperLimit)
+        {
+            ActualVelocity = 0;
+
+            if (Math.Abs(TargetPosition - ActualPosition) <= 0.01)
+            {
+                CommandPosition = TargetPosition;
+                _profileVelocity = 0;
+                _controller.Reset();
+            }
+        }
     }
 
     public bool AtTarget(double tolerance = 0.01) =>
