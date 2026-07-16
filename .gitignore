@@ -36,4 +36,5 @@ runtime-data/
 runs/
 research/*.egg-info/
 *.parquet
-*.pcapng
+*.pcapngresolved-compose.yml
+resolved-compose.yml
