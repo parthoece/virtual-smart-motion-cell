@@ -231,8 +231,36 @@ public sealed class MesOrderPollingService(
                     await Task.Delay(delay, stoppingToken).ConfigureAwait(false);
                     continue;
                 }
-                var order = await client.GetFromJsonAsync<MesOrder>(
-                    $"api/v1/orders/next?machineId={Uri.EscapeDataString(options.Value.MachineId)}", stoppingToken).ConfigureAwait(false);
+                var endpoint =
+                    $"api/v1/orders/next?machineId={Uri.EscapeDataString(options.Value.MachineId)}";
+
+                using var response = await client.GetAsync(endpoint, stoppingToken)
+                    .ConfigureAwait(false);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+                    await Task.Delay(delay, stoppingToken).ConfigureAwait(false);
+                    continue;
+                }
+
+                response.EnsureSuccessStatusCode();
+
+                var payload = await response.Content
+                    .ReadAsStringAsync(stoppingToken)
+                    .ConfigureAwait(false);
+
+                if (string.IsNullOrWhiteSpace(payload))
+                {
+                    await Task.Delay(delay, stoppingToken).ConfigureAwait(false);
+                    continue;
+                }
+
+                var order = System.Text.Json.JsonSerializer.Deserialize<MesOrder>(
+                    payload,
+                    new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
                 if (order is not null)
                 {
                     var result = await bus.SendAsync(new MachineCommandRequest(

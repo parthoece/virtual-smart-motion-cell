@@ -83,6 +83,8 @@ The machine domain does not depend on Avalonia, Three.js, HTTP, file storage, OP
 ### 1. Build
 
 ```bash
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\start-complete.ps1
 dotnet restore VirtualSmartMotionCell.sln
 dotnet build VirtualSmartMotionCell.sln -c Release
 ```
@@ -114,6 +116,7 @@ The HMI connects to `http://localhost:8080` by default. Override it with `VSMC_E
 Use the HMI, or run:
 
 ```bash
+
 ./scripts/run-demo.sh
 ```
 

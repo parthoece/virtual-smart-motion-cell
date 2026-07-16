@@ -7,6 +7,8 @@ services:
       dockerfile: docker/Dockerfile.mes
     ports:
       - "127.0.0.1:${VSMC_MES_PORT:-8090}:8090"
+    environment:
+      VSMC_MES_URLS: http://0.0.0.0:8090
     restart: unless-stopped
 
   machine-runtime:
@@ -19,6 +21,7 @@ services:
       - "127.0.0.1:${VSMC_RUNTIME_PORT:-8080}:8080"
       - "127.0.0.1:${VSMC_OPCUA_PORT:-4840}:4840"
     environment:
+      VSMC_URLS: http://0.0.0.0:8080
       VSMC_DATA_DIR: /data
       VSMC_ALLOW_REMOTE_COMMANDS: "true"
       VSMC_Mes__BaseUrl: http://mes-simulator:8090/

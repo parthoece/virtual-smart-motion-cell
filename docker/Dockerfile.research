@@ -1,0 +1,16 @@
+FROM python:3.13-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    VSMC_RESEARCH_RUN_ROOT=/runs
+
+WORKDIR /workspace
+COPY research /workspace/research
+COPY benchmarks /workspace/benchmarks
+COPY scripts/validate_research_bundle.py /workspace/scripts/validate_research_bundle.py
+COPY scripts/compose_bootstrap.py /workspace/scripts/compose_bootstrap.py
+RUN python -m pip install --no-cache-dir /workspace/research
+
+EXPOSE 8091
+CMD ["vsmc-studio", "--host", "0.0.0.0", "--port", "8091"]

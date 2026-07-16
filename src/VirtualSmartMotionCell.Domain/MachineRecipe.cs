@@ -40,8 +40,26 @@ public sealed record MachineRecipe(
     {
         get
         {
-            var json = JsonSerializer.Serialize(this);
-            return Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(json))).ToLowerInvariant();
+            var payload = new
+            {
+                SchemaVersion,
+                RecipeId,
+                Revision,
+                Status,
+                Pick,
+                Inspect,
+                Place,
+                Home,
+                Motion,
+                PickDwellSeconds,
+                InspectDwellSeconds,
+                PlaceDwellSeconds
+            };
+
+            var json = JsonSerializer.Serialize(payload);
+            var hash = SHA256.HashData(Encoding.UTF8.GetBytes(json));
+
+            return Convert.ToHexString(hash).ToLowerInvariant();
         }
     }
 
