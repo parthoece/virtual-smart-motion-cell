@@ -157,7 +157,7 @@ def main() -> int:
     while time.monotonic() < deadline:
         try:
             _, value = request("GET", f"{MES}/api/v1/results")
-            if isinstance(value, list) and value:
+            if isinstance(value, (list, dict)) and len(value) > 0:
                 results = value
                 break
         except Exception:
