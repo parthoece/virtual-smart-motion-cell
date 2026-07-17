@@ -180,40 +180,53 @@ The runtime continues to listen on port `8080` inside the container; only the ho
 
 ## Architecture
 
-![Architecture](docs/assets/architecture.svg)
-
 ```mermaid
-%%{
-  init: {
-    "themeVariables": {
-      "fontSize": "19px"
-    },
-    "flowchart": {
-      "useMaxWidth": true,
-      "nodeSpacing": 65,
-      "rankSpacing": 75,
-      "diagramPadding": 12
-    }
-  }
-}%%
 flowchart TB
-    HMI[Avalonia operator HMI] --> API[ASP.NET Core API]
-    Twin[Three.js digital twin] --> WS[WebSocket state stream]
+    HMI["Avalonia operator HMI"] --> API["REST API"]
+    MES["MES or MES simulator"] --> Poller["MES order poller"]
+    Twin["Three.js digital twin"]
 
-    API --> Bus[Bounded command bus]
-    Bus --> Runtime[Headless machine runtime]
-    Runtime --> Domain[Machine domain and sequences]
+    API --> Bus["Bounded command bus"]
+    Poller --> Bus
 
-    Domain --> Motion[Motion system abstraction]
-    Motion --> Sim[Simulation adapter]
-    Motion --> Replay[Replay adapter]
-    Motion --> Fault[Fault-injection adapter]
+    Bus --> Coordinator["MachineCoordinator"]
+    Coordinator --> Domain["Machine domain and sequences"]
+    Domain --> Motion["IMotionSystem port"]
 
-    Runtime --> Stores[Production data and durable outbox]
-    Runtime --> OPC[OPC UA simulation server]
-    Runtime --> MES[HTTP MES integration]
-    Runtime --> OTel[Logs, metrics, and traces]
-    Runtime --> WS does not depend on Avalonia, Three.js, HTTP, file storage, OPC UA, or a motion-controller vendor. External systems are connected through application ports and infrastructure adapters.
+    Motion --> Sim["Simulation adapter"]
+    Motion --> Replay["Replay adapter"]
+    Motion --> Fault["Fault-injection adapter"]
+    Motion --> Extensions["Contributor adapters"]
+
+    Coordinator --> Stores["Events, production data, alarms, and checkpoints"]
+    Coordinator --> Outbox["Durable manufacturing outbox"]
+    Outbox --> MES
+
+    Coordinator --> WS["WebSocket state stream"]
+    WS --> Twin
+
+    Coordinator --> OPC["Read-only OPC UA server"]
+    Coordinator --> Telemetry["Logs, metrics, and traces"]
+```
+
+<details>
+<summary>Static SVG version</summary>
+
+<br>
+
+<p align="center">
+  <img
+    src="docs/assets/architecture.svg"
+    alt="Virtual Smart Motion Cell architecture"
+    width="100%"
+  >
+</p>
+
+</details>
+
+The machine domain does not depend on Avalonia, Three.js, HTTP, file storage,
+OPC UA, or a motion-controller vendor. External systems connect through
+application ports and infrastructure adapters.
 
 ### Main runtime flow
 
@@ -225,6 +238,7 @@ flowchart TB
 6. Completed cycles enter the manufacturing outbox.
 7. The outbox worker delivers results through the configured MES gateway.
 8. State snapshots are published through REST, WebSocket, OPC UA, and telemetry.
+
 
 ## Motion adapters
 
