@@ -213,11 +213,7 @@ flowchart TB
     Runtime --> OPC[OPC UA simulation server]
     Runtime --> MES[HTTP MES integration]
     Runtime --> OTel[Logs, metrics, and traces]
-    Runtime --> WS
-
-
-
-The machine domain does not depend on Avalonia, Three.js, HTTP, file storage, OPC UA, or a motion-controller vendor. External systems are connected through application ports and infrastructure adapters.
+    Runtime --> WS does not depend on Avalonia, Three.js, HTTP, file storage, OPC UA, or a motion-controller vendor. External systems are connected through application ports and infrastructure adapters.
 
 ### Main runtime flow
 
