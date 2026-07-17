@@ -184,118 +184,61 @@ The system uses a modular-monolith and ports-and-adapters architecture. The
 machine domain remains independent of the HMI, browser viewer, storage format,
 industrial protocols, and motion-controller implementation.
 
-### Runtime architecture
+### System overview
 
-```mermaid
-%%{
-  init: {
-    "theme": "base",
-    "themeVariables": {
-      "fontSize": "21px",
-      "primaryColor": "#182738",
-      "primaryTextColor": "#eaf3f8",
-      "primaryBorderColor": "#3e739c",
-      "lineColor": "#54b4e8",
-      "secondaryColor": "#182738",
-      "tertiaryColor": "#0b121b"
-    },
-    "flowchart": {
-      "useMaxWidth": true,
-      "htmlLabels": true,
-      "nodeSpacing": 55,
-      "rankSpacing": 70,
-      "diagramPadding": 16,
-      "curve": "basis"
-    }
-  }
-}%%
-
-flowchart TB
-    Clients["Operator and integration clients"]
-
-    HMI["Avalonia operator HMI"]
-    Twin["Three.js digital twin"]
-    MES["MES or MES simulator"]
-
-    API["ASP.NET Core API<br/>REST · WebSocket · health · metrics"]
-    Poller["MES order poller"]
-    Bus["Bounded command bus"]
-
-    Coordinator["MachineCoordinator<br/>modes · interlocks · sequences · recovery"]
-    Domain["Machine domain<br/>orders · recipes · alarms · production state"]
-
-    MotionPort["IMotionSystem port"]
-    Persistence["Persistence ports"]
-    Integration["Integration and publication ports"]
-
-    Sim["Simulation adapter"]
-    Replay["Replay adapter"]
-    Fault["Fault-injection adapter"]
-    Extension["Contributor adapters"]
-
-    Stores["Events · checkpoints<br/>production data · alarm history"]
-    Outbox["Durable manufacturing outbox"]
-
-    OPC["Read-only OPC UA server"]
-    Telemetry["Logs · metrics · traces"]
-
-    Clients --> HMI
-    Clients --> Twin
-    Clients --> MES
-
-    HMI --> API
-    Twin --> API
-    MES --> Poller
-
-    API --> Bus
-    Poller --> Bus
-
-    Bus --> Coordinator
-    Coordinator --> Domain
-
-    Domain --> MotionPort
-    Coordinator --> Persistence
-    Coordinator --> Integration
-
-    MotionPort --> Sim
-    MotionPort --> Replay
-    MotionPort --> Fault
-    MotionPort --> Extension
-
-    Persistence --> Stores
-    Persistence --> Outbox
-    Outbox --> MES
-
-    Integration --> API
-    Integration --> OPC
-    Integration --> Telemetry
-```
-
-### Static system overview
-
-<p align="center">
+<a href="docs/assets/architecture.svg">
   <img
     src="docs/assets/architecture.svg"
-    alt="Virtual Smart Motion Cell architecture"
-    width="1200"
+    alt="Virtual Smart Motion Cell cross-platform architecture"
+    width="100%"
   />
-</p>
+</a>
 
 <p align="center">
   <sub>
-    Cross-platform architecture showing the runtime, operator interfaces,
-    simulation, persistence, OPC UA, telemetry, and MES integration.
+    Select the diagram to open the full-size SVG.
   </sub>
 </p>
 
-The machine domain does not depend on Avalonia, Three.js, HTTP, file storage,
-OPC UA, or a motion-controller vendor. External systems connect through
-application ports and infrastructure adapters.
+### Runtime flow
+
+```mermaid id="c32n2u"
+flowchart TB
+    Clients["HMI · browser viewer · MES"]
+    Edge["REST API · WebSocket · MES poller"]
+    Bus["Bounded command bus"]
+    Core["MachineCoordinator"]
+    Domain["Machine domain and sequences"]
+    Motion["Motion adapters"]
+    Data["Events · checkpoints · production data · outbox"]
+    Services["OPC UA · logs · metrics · traces"]
+
+    Clients --> Edge
+    Edge --> Bus
+    Bus --> Core
+    Core --> Domain
+    Domain --> Motion
+    Core --> Data
+    Core --> Services
+```
+
+The bounded command bus serializes command execution before commands reach
+`MachineCoordinator`. The coordinator evaluates modes, interlocks, sequences,
+alarms, and recovery conditions while the machine domain remains isolated from
+external technologies.
+
+Motion behavior is provided through `IMotionSystem` implementations, including
+simulation, deterministic replay, fault injection, and contributor adapters.
+Runtime services persist operational state and publish snapshots through REST,
+WebSocket, OPC UA, and telemetry.
+
+See the [detailed architecture documentation](docs/architecture.md) for component
+boundaries, ports, adapters, persistence, integration, and recovery behavior.
 
 ### Main runtime flow
 
 1. Commands enter through REST, the HMI, the MES poller, or internal services.
-2. A bounded command bus serializes command execution.
+2. The bounded command bus serializes command execution.
 3. `MachineCoordinator` evaluates modes, interlocks, sequences, and transitions.
 4. The selected `IMotionSystem` implementation advances the machine model.
 5. Runtime services persist events, production records, alarms, and checkpoints.
