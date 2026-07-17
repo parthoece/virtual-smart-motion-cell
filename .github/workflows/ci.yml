@@ -75,20 +75,19 @@ jobs:
         env:
           VSMC_MES_URLS: http://127.0.0.1:18090
           VSMC_URLS: http://127.0.0.1:18080
+          ASPNETCORE_URLS: http://127.0.0.1:18080
 
           VSMC_Mes__BaseUrl: http://127.0.0.1:18090/
           VSMC_Mes__PollIntervalMilliseconds: "250"
 
           VSMC_OpcUa__Endpoint: opc.tcp://127.0.0.1:14840/vsmc
 
-          # Support both the direct environment lookup and .NET options binding.
-          VSMC_DATA_DIR: artifacts/smoke-runtime-data
-          VSMC_Runtime__DataDirectory: artifacts/smoke-runtime-data
-
+          VSMC_DATA_DIR: ${{ github.workspace }}/artifacts/smoke-runtime-data
+          VSMC_Runtime__DataDirectory: ${{ github.workspace }}/artifacts/smoke-runtime-data
           VSMC_ALLOW_REMOTE_COMMANDS: "true"
 
         run: |
-          set -euo pipefail
+          set -u
 
           mkdir -p artifacts/smoke-runtime-data
 
@@ -113,6 +112,9 @@ jobs:
           }
           trap cleanup EXIT
 
+          echo "MES PID: $MES_PID"
+          echo "API PID: $API_PID"
+
           sleep 3
 
           if ! kill -0 "$MES_PID" 2>/dev/null; then
@@ -129,27 +131,18 @@ jobs:
             exit 1
           fi
 
-          python scripts/api_smoke.py
+          if ! python scripts/api_smoke.py; then
+            echo "===== LISTENING PORTS ====="
+            ss -ltnp || true
 
-      - name: Print smoke diagnostics
-        if: failure()
-        shell: bash
-        run: |
-          echo "===== MES LOG ====="
-          cat artifacts/mes.log 2>/dev/null || true
+            echo "===== MES LOG ====="
+            cat artifacts/mes.log 2>/dev/null || true
 
-          echo "===== API LOG ====="
-          cat artifacts/api.log 2>/dev/null || true
+            echo "===== API LOG ====="
+            cat artifacts/api.log 2>/dev/null || true
 
-          echo "===== PROCESS INFORMATION ====="
-          if test -f artifacts/mes.pid; then
-            ps -p "$(cat artifacts/mes.pid)" -f || true
+            exit 1
           fi
-
-          if test -f artifacts/api.pid; then
-            ps -p "$(cat artifacts/api.pid)" -f || true
-          fi
-
       - name: Upload smoke diagnostics
         if: always()
         uses: actions/upload-artifact@v7

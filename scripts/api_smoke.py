@@ -10,11 +10,16 @@ import struct
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import urlparse
 
 API = os.getenv("VSMC_SMOKE_API", "http://127.0.0.1:18080")
 MES = os.getenv("VSMC_SMOKE_MES", "http://127.0.0.1:18090")
 OPC_HOST = os.getenv("VSMC_SMOKE_OPC_HOST", "127.0.0.1")
 OPC_PORT = int(os.getenv("VSMC_SMOKE_OPC_PORT", "14840"))
+
+API_ADDRESS = urlparse(API)
+API_HOST = API_ADDRESS.hostname or "127.0.0.1"
+API_PORT = API_ADDRESS.port or 80
 
 
 def request(method: str, url: str, payload: object | None = None, timeout: float = 3.0):
@@ -79,11 +84,11 @@ def check_tcp(host: str, port: int, timeout: float = 20.0):
 
 def websocket_snapshot() -> dict:
     key = base64.b64encode(os.urandom(16)).decode()
-    with socket.create_connection(("127.0.0.1", 18080), timeout=5) as sock:
+    with socket.create_connection((API_HOST, API_PORT), timeout=5) as sock:
         sock.settimeout(8)
         request_text = (
             "GET /ws/state HTTP/1.1\r\n"
-            "Host: 127.0.0.1:18080\r\n"
+            f"Host: {API_HOST}:{API_PORT}\r\n"
             "Upgrade: websocket\r\n"
             "Connection: Upgrade\r\n"
             f"Sec-WebSocket-Key: {key}\r\n"
