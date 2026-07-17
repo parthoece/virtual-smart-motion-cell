@@ -56,27 +56,100 @@ jobs:
   end-to-end:
     name: API + MES + OPC UA + WebSocket
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+
     steps:
       - uses: actions/checkout@v7
-        with: { persist-credentials: false }
+        with:
+          persist-credentials: false
+
       - uses: actions/setup-dotnet@v5
-        with: { dotnet-version: 10.0.301 }
-      - run: dotnet build VirtualSmartMotionCell.sln -c Release
+        with:
+          dotnet-version: 10.0.301
+
+      - name: Build solution
+        run: dotnet build VirtualSmartMotionCell.sln -c Release
+
       - name: Start simulated MES and machine runtime
         shell: bash
         env:
           VSMC_MES_URLS: http://127.0.0.1:18090
           VSMC_URLS: http://127.0.0.1:18080
+
           VSMC_Mes__BaseUrl: http://127.0.0.1:18090/
           VSMC_Mes__PollIntervalMilliseconds: "250"
+
           VSMC_OpcUa__Endpoint: opc.tcp://127.0.0.1:14840/vsmc
+
+          # Support both the direct environment lookup and .NET options binding.
+          VSMC_DATA_DIR: artifacts/smoke-runtime-data
           VSMC_Runtime__DataDirectory: artifacts/smoke-runtime-data
+
+          VSMC_ALLOW_REMOTE_COMMANDS: "true"
+
         run: |
-          mkdir -p artifacts
-          dotnet run --project tools/VirtualSmartMotionCell.MesSimulator -c Release --no-build > artifacts/mes.log 2>&1 & echo $! > artifacts/mes.pid
-          dotnet run --project src/VirtualSmartMotionCell.Api -c Release --no-build > artifacts/api.log 2>&1 & echo $! > artifacts/api.pid
-          trap 'kill $(cat artifacts/api.pid) $(cat artifacts/mes.pid) 2>/dev/null || true' EXIT
+          set -euo pipefail
+
+          mkdir -p artifacts/smoke-runtime-data
+
+          dotnet run \
+            --project tools/VirtualSmartMotionCell.MesSimulator \
+            --configuration Release \
+            --no-build \
+            > artifacts/mes.log 2>&1 &
+          MES_PID=$!
+          echo "$MES_PID" > artifacts/mes.pid
+
+          dotnet run \
+            --project src/VirtualSmartMotionCell.Api \
+            --configuration Release \
+            --no-build \
+            > artifacts/api.log 2>&1 &
+          API_PID=$!
+          echo "$API_PID" > artifacts/api.pid
+
+          cleanup() {
+            kill "$API_PID" "$MES_PID" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          sleep 3
+
+          if ! kill -0 "$MES_PID" 2>/dev/null; then
+            echo "MES simulator exited during startup."
+            echo "===== MES LOG ====="
+            cat artifacts/mes.log || true
+            exit 1
+          fi
+
+          if ! kill -0 "$API_PID" 2>/dev/null; then
+            echo "Machine API exited during startup."
+            echo "===== API LOG ====="
+            cat artifacts/api.log || true
+            exit 1
+          fi
+
           python scripts/api_smoke.py
+
+      - name: Print smoke diagnostics
+        if: failure()
+        shell: bash
+        run: |
+          echo "===== MES LOG ====="
+          cat artifacts/mes.log 2>/dev/null || true
+
+          echo "===== API LOG ====="
+          cat artifacts/api.log 2>/dev/null || true
+
+          echo "===== PROCESS INFORMATION ====="
+          if test -f artifacts/mes.pid; then
+            ps -p "$(cat artifacts/mes.pid)" -f || true
+          fi
+
+          if test -f artifacts/api.pid; then
+            ps -p "$(cat artifacts/api.pid)" -f || true
+          fi
+
       - name: Upload smoke diagnostics
         if: always()
         uses: actions/upload-artifact@v7

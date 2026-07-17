@@ -9,10 +9,18 @@ namespace VirtualSmartMotionCell.Infrastructure;
 
 internal static class FileStoreHelpers
 {
+    private static readonly JsonSerializerOptions JsonLineOptions =
+        new(JsonDefaults.Options)
+        {
+            WriteIndented = false
+        };
+
+    public static string SerializeJsonLine<T>(T value) =>
+        JsonSerializer.Serialize(value, JsonLineOptions) + Environment.NewLine;
     public static async ValueTask AppendJsonLineAsync<T>(string path, T value, SemaphoreSlim gate, CancellationToken cancellationToken)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-        var line = JsonSerializer.Serialize(value, JsonDefaults.Options) + Environment.NewLine;
+        var line = SerializeJsonLine(value);
         await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
         try { await File.AppendAllTextAsync(path, line, Encoding.UTF8, cancellationToken).ConfigureAwait(false); }
         finally { gate.Release(); }
@@ -404,7 +412,7 @@ public sealed class FileManufacturingGateway(string dataDirectory) : IManufactur
         {
             if (!File.Exists(receipt))
             {
-                await File.AppendAllTextAsync(_deliveryPath, JsonSerializer.Serialize(envelope, JsonDefaults.Options) + Environment.NewLine, Encoding.UTF8, cancellationToken).ConfigureAwait(false);
+                await File.AppendAllTextAsync(_deliveryPath, FileStoreHelpers.SerializeJsonLine(envelope), Encoding.UTF8, cancellationToken).ConfigureAwait(false);
                 await File.WriteAllTextAsync(receipt, machineEvent.EventId, cancellationToken).ConfigureAwait(false);
             }
         }

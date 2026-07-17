@@ -165,10 +165,12 @@ static Task ReplayAdapterParses()
 static Task SolutionMembership()
 {
     var root = FindRepositoryRoot();
-    var solution = File.ReadAllText(System.IO.Path.Combine(root, "VirtualSmartMotionCell.sln"));
+    var solution = File.ReadAllText(System.IO.Path.Combine(root, "VirtualSmartMotionCell.sln"))
+        .Replace('\\', '/');
+
     var projects = Directory.EnumerateFiles(root, "*.csproj", SearchOption.AllDirectories)
         .Where(path => !path.Contains($"{System.IO.Path.DirectorySeparatorChar}node_modules{System.IO.Path.DirectorySeparatorChar}", StringComparison.Ordinal))
-        .Select(path => System.IO.Path.GetRelativePath(root, path).Replace('/', '\\'))
+        .Select(path => System.IO.Path.GetRelativePath(root, path).Replace('\\', '/'))
         .ToArray();
     foreach (var project in projects)
         Assert(solution.Contains(project, StringComparison.OrdinalIgnoreCase), $"Solution is missing {project}.");
