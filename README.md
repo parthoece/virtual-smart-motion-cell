@@ -180,49 +180,113 @@ The runtime continues to listen on port `8080` inside the container; only the ho
 
 ## Architecture
 
-```mermaid
-flowchart TB
-    HMI["Avalonia operator HMI"] --> API["REST API"]
-    MES["MES or MES simulator"] --> Poller["MES order poller"]
-    Twin["Three.js digital twin"]
+The system uses a modular-monolith and ports-and-adapters architecture. The
+machine domain remains independent of the HMI, browser viewer, storage format,
+industrial protocols, and motion-controller implementation.
 
-    API --> Bus["Bounded command bus"]
+### Runtime architecture
+
+```mermaid
+%%{
+  init: {
+    "theme": "base",
+    "themeVariables": {
+      "fontSize": "21px",
+      "primaryColor": "#182738",
+      "primaryTextColor": "#eaf3f8",
+      "primaryBorderColor": "#3e739c",
+      "lineColor": "#54b4e8",
+      "secondaryColor": "#182738",
+      "tertiaryColor": "#0b121b"
+    },
+    "flowchart": {
+      "useMaxWidth": true,
+      "htmlLabels": true,
+      "nodeSpacing": 55,
+      "rankSpacing": 70,
+      "diagramPadding": 16,
+      "curve": "basis"
+    }
+  }
+}%%
+
+flowchart TB
+    Clients["Operator and integration clients"]
+
+    HMI["Avalonia operator HMI"]
+    Twin["Three.js digital twin"]
+    MES["MES or MES simulator"]
+
+    API["ASP.NET Core API<br/>REST · WebSocket · health · metrics"]
+    Poller["MES order poller"]
+    Bus["Bounded command bus"]
+
+    Coordinator["MachineCoordinator<br/>modes · interlocks · sequences · recovery"]
+    Domain["Machine domain<br/>orders · recipes · alarms · production state"]
+
+    MotionPort["IMotionSystem port"]
+    Persistence["Persistence ports"]
+    Integration["Integration and publication ports"]
+
+    Sim["Simulation adapter"]
+    Replay["Replay adapter"]
+    Fault["Fault-injection adapter"]
+    Extension["Contributor adapters"]
+
+    Stores["Events · checkpoints<br/>production data · alarm history"]
+    Outbox["Durable manufacturing outbox"]
+
+    OPC["Read-only OPC UA server"]
+    Telemetry["Logs · metrics · traces"]
+
+    Clients --> HMI
+    Clients --> Twin
+    Clients --> MES
+
+    HMI --> API
+    Twin --> API
+    MES --> Poller
+
+    API --> Bus
     Poller --> Bus
 
-    Bus --> Coordinator["MachineCoordinator"]
-    Coordinator --> Domain["Machine domain and sequences"]
-    Domain --> Motion["IMotionSystem port"]
+    Bus --> Coordinator
+    Coordinator --> Domain
 
-    Motion --> Sim["Simulation adapter"]
-    Motion --> Replay["Replay adapter"]
-    Motion --> Fault["Fault-injection adapter"]
-    Motion --> Extensions["Contributor adapters"]
+    Domain --> MotionPort
+    Coordinator --> Persistence
+    Coordinator --> Integration
 
-    Coordinator --> Stores["Events, production data, alarms, and checkpoints"]
-    Coordinator --> Outbox["Durable manufacturing outbox"]
+    MotionPort --> Sim
+    MotionPort --> Replay
+    MotionPort --> Fault
+    MotionPort --> Extension
+
+    Persistence --> Stores
+    Persistence --> Outbox
     Outbox --> MES
 
-    Coordinator --> WS["WebSocket state stream"]
-    WS --> Twin
-
-    Coordinator --> OPC["Read-only OPC UA server"]
-    Coordinator --> Telemetry["Logs, metrics, and traces"]
+    Integration --> API
+    Integration --> OPC
+    Integration --> Telemetry
 ```
 
-<details>
-<summary>Static SVG version</summary>
-
-<br>
+### Static system overview
 
 <p align="center">
   <img
     src="docs/assets/architecture.svg"
     alt="Virtual Smart Motion Cell architecture"
-    width="100%"
-  >
+    width="1200"
+  />
 </p>
 
-</details>
+<p align="center">
+  <sub>
+    Cross-platform architecture showing the runtime, operator interfaces,
+    simulation, persistence, OPC UA, telemetry, and MES integration.
+  </sub>
+</p>
 
 The machine domain does not depend on Avalonia, Three.js, HTTP, file storage,
 OPC UA, or a motion-controller vendor. External systems connect through
@@ -238,6 +302,7 @@ application ports and infrastructure adapters.
 6. Completed cycles enter the manufacturing outbox.
 7. The outbox worker delivers results through the configured MES gateway.
 8. State snapshots are published through REST, WebSocket, OPC UA, and telemetry.
+
 
 
 ## Motion adapters

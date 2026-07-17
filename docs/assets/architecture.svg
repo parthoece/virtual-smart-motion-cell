@@ -1,4 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720"><rect width="1200" height="720" rx="22" fill="#0b121b"/><g font-family="Inter,Arial" text-anchor="middle"><text x="600" y="55" fill="#eaf3f8" font-size="30" font-weight="700">Cross-platform equipment software architecture</text>
-<g fill="#182738" stroke="#3e739c" stroke-width="2"><rect x="400" y="100" width="400" height="110" rx="14"/><rect x="100" y="300" width="260" height="110" rx="14"/><rect x="470" y="300" width="260" height="110" rx="14"/><rect x="840" y="300" width="260" height="110" rx="14"/><rect x="100" y="520" width="260" height="110" rx="14"/><rect x="470" y="520" width="260" height="110" rx="14"/><rect x="840" y="520" width="260" height="110" rx="14"/></g>
-<g fill="#eaf3f8" font-size="20"><text x="600" y="145">Machine runtime</text><text x="600" y="178" fill="#90abc0" font-size="16">domain · commands · sequence · alarms · recovery</text><text x="230" y="345">Avalonia HMI</text><text x="600" y="345">WebSocket API</text><text x="970" y="345">Browser digital twin</text><text x="230" y="565">Simulation adapter</text><text x="600" y="565">Event + outbox store</text><text x="970" y="565">OPC UA / MES adapters</text></g>
-<g stroke="#54b4e8" stroke-width="3" fill="none"><path d="M500 210L300 300"/><path d="M600 210v90"/><path d="M700 210l200 90"/><path d="M500 410L300 520"/><path d="M600 410v110"/><path d="M700 410l200 110"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="620"
+     viewBox="0 0 1200 620"
+     preserveAspectRatio="xMidYMid meet"
+     role="img"
+     aria-labelledby="title description">
+  <title id="title">Virtual Smart Motion Cell architecture</title>
+  <desc id="description">
+    Cross-platform architecture showing the machine runtime connected to operator,
+    browser, simulation, storage, OPC UA, and MES components.
+  </desc>
+
+  <defs>
+    <marker id="arrow"
+            markerWidth="10"
+            markerHeight="10"
+            refX="8"
+            refY="5"
+            orient="auto"
+            markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#54b4e8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" rx="22" fill="#0b121b"/>
+
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <text x="600"
+          y="43"
+          fill="#eaf3f8"
+          font-size="34"
+          font-weight="700">
+      Cross-platform equipment software architecture
+    </text>
+
+    <g fill="#182738" stroke="#3e739c" stroke-width="2.5">
+      <rect x="350" y="72" width="500" height="120" rx="16"/>
+
+      <rect x="35"  y="245" width="340" height="120" rx="16"/>
+      <rect x="430" y="245" width="340" height="120" rx="16"/>
+      <rect x="825" y="245" width="340" height="120" rx="16"/>
+
+      <rect x="35"  y="455" width="340" height="120" rx="16"/>
+      <rect x="430" y="455" width="340" height="120" rx="16"/>
+      <rect x="825" y="455" width="340" height="120" rx="16"/>
+    </g>
+
+    <g fill="#eaf3f8" font-size="24" font-weight="600">
+      <text x="600" y="120">Machine runtime</text>
+
+      <text x="205" y="300">Avalonia HMI</text>
+      <text x="600" y="300">WebSocket API</text>
+      <text x="995" y="300">Browser digital twin</text>
+
+      <text x="205" y="510">Simulation adapter</text>
+      <text x="600" y="510">Event + outbox store</text>
+      <text x="995" y="510">OPC UA / MES adapters</text>
+    </g>
+
+    <g fill="#90abc0" font-size="18">
+      <text x="600" y="157">
+        domain · commands · sequences · alarms · recovery
+      </text>
+
+      <text x="205" y="333">cross-platform operator UI</text>
+      <text x="600" y="333">live state publication</text>
+      <text x="995" y="333">Three.js visualization</text>
+
+      <text x="205" y="543">motion and fault injection</text>
+      <text x="600" y="543">production data · delivery</text>
+      <text x="995" y="543">industrial integration</text>
+    </g>
+
+    <g stroke="#54b4e8"
+       stroke-width="3.5"
+       fill="none"
+       stroke-linecap="round"
+       marker-end="url(#arrow)">
+      <path d="M470 192 L250 245"/>
+      <path d="M600 192 L600 245"/>
+      <path d="M730 192 L950 245"/>
+
+      <path d="M250 365 L205 455"/>
+      <path d="M600 365 L600 455"/>
+      <path d="M950 365 L995 455"/>
+    </g>
+  </g>
+</svg>
