@@ -151,9 +151,22 @@ def main() -> int:
     if ws.get("revision", 0) <= 0 or "xAxis" not in ws:
         raise RuntimeError("WebSocket state did not contain a valid machine snapshot")
 
-    results = wait_http(f"{MES}/api/v1/results", timeout=30)
+    results = []
+    deadline = time.monotonic() + 30
+
+    while time.monotonic() < deadline:
+        try:
+            _, value = request("GET", f"{MES}/api/v1/results")
+            if isinstance(value, list) and value:
+                results = value
+                break
+        except Exception:
+            pass
+
+        time.sleep(0.25)
+
     if not results:
-        raise RuntimeError("MES did not receive the outbox result")
+        raise RuntimeError("MES did not receive the outbox result within 30 seconds")
 
     with urllib.request.urlopen(f"{API}/metrics", timeout=3) as response:
         metrics = response.read().decode()
