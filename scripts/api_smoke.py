@@ -166,7 +166,22 @@ def main() -> int:
         time.sleep(0.25)
 
     if not results:
-        raise RuntimeError("MES did not receive the outbox result within 30 seconds")
+        diagnostics = {}
+
+        for name, url in (
+            ("outbox", f"{API}/api/v1/outbox"),
+            ("integration", f"{API}/api/v1/integration"),
+            ("state", f"{API}/api/v1/state"),
+        ):
+            try:
+                _, diagnostics[name] = request("GET", url)
+            except Exception as exc:
+                diagnostics[name] = repr(exc)
+
+        raise RuntimeError(
+            "MES did not receive the outbox result within 30 seconds; "
+            f"diagnostics={json.dumps(diagnostics, default=str)}"
+        )
 
     with urllib.request.urlopen(f"{API}/metrics", timeout=3) as response:
         metrics = response.read().decode()
