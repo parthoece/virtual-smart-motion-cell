@@ -109,7 +109,12 @@ public sealed class MachineRuntimeService(
                 if (machineEvent.Payload is AlarmEventPayload alarmEvent)
                     await alarmHistoryStore.AppendAsync(alarmEvent.Alarm, alarmEvent.Action, stoppingToken).ConfigureAwait(false);
                 if (machineEvent.EventType == "cycle.completed")
+                {
                     await outboxStore.EnqueueAsync(machineEvent, stoppingToken).ConfigureAwait(false);
+                    logger.LogInformation(
+                        "Enqueued cycle completion {EventId} for MES delivery",
+                        machineEvent.EventId);
+                }
                 if (machineEvent.EventType is "machine.transition" or "alarm.raised" or "cycle.completed" or "order.loaded" or "order.status")
                     checkpointRequested = true;
             }
@@ -176,14 +181,29 @@ public sealed class OutboxDeliveryService(
             integrationStatus.UpdateMes(health.Health, health.Status);
             var pending = await outboxStore.ReadPendingAsync(20, stoppingToken).ConfigureAwait(false);
             integrationStatus.SetOutboxPending(pending.Count);
+
+            if (pending.Count > 0)
+            {
+                logger.LogInformation(
+                    "MES outbox contains {PendingCount} pending message(s)",
+                    pending.Count);
+            }
+
             foreach (var message in pending)
             {
                 try
                 {
                     using var activity = MachineTelemetry.Activities.StartActivity("mes.deliver", ActivityKind.Producer);
                     activity?.SetTag("message.id", message.EventId);
+                    logger.LogInformation(
+                        "Attempting MES delivery for event {EventId}",
+                        message.EventId);
+
                     if (await manufacturingGateway.DeliverAsync(message, stoppingToken).ConfigureAwait(false))
                     {
+                        logger.LogInformation(
+                            "MES accepted event {EventId}",
+                            message.EventId);
                         await outboxStore.MarkDeliveredAsync(message.EventId, stoppingToken).ConfigureAwait(false);
                         integrationStatus.MarkDelivered(DateTimeOffset.UtcNow);
                         integrationStatus.UpdateMes(IntegrationHealth.Healthy, "delivery successful");
