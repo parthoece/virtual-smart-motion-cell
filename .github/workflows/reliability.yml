@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: actions/setup-dotnet@v5
+      - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.301
       - run: dotnet run --project tools/VirtualSmartMotionCell.Reliability -c Release -- --cycles "$CAMPAIGN_CYCLES" --duration-minutes "$CAMPAIGN_DURATION_MINUTES" --output artifacts/reliability/report.json
